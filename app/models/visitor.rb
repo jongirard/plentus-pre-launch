@@ -11,7 +11,7 @@ class Visitor < ActiveRecord::Base
       :email => {:email => self.email},
       :double_optin => false,
       :update_existing => true,
-      :send_welcome => true
+      :send_welcome => false
     })
     Rails.logger.info("Subscribed #{self.email} to MailChimp") if result
   end
