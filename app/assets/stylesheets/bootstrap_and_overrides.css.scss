@@ -6,25 +6,12 @@ background-color: #edeeed;
 .span12 {
 padding-top: 10%;
 }
-.logo {
-padding-bottom: 90px;
-margin: auto;
-width: 186px;
-height: 38px;
-background-image: asset-url("plentuslogo.png", image);
-background-repeat: no-repeat;
-}
-.description{
-margin: auto;
-width: 100%;
-max-width: 960px;
-}
 span.blue-keyword {
 color: #2c72bb;
 }
 h1 {
 color: #505050;
-font-weight: normal;
+font-weight: bold;
 font-size: 48px;
 font-family: 'ProximaNova-Thin', Helvetica Neue, Arial, sans-serif;
 line-height: 50px;
@@ -54,7 +41,13 @@ width: 210px;
 height: 48px;
 margin-top: -104px;
 margin-left: 503px;
+background-image: -moz-linear-gradient(top, #0080c2, #0171ac);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0080c2), to(#0171ac));
+background-image: -webkit-linear-gradient(top, #0080c2, #0171ac);
+background-image: -o-linear-gradient(top, #0080c2, #0171ac);
+background-image: linear-gradient(to bottom, #0080c2, #0171ac);
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.09);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.09);
 box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.09);
 }
 .form-email input.btn.btn-primary:hover {
