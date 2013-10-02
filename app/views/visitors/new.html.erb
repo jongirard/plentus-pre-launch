@@ -1,17 +1,15 @@
 <% content_for :title do %>Plentus App<% end %>
 <% content_for :description do %>Plentus Pre-Launch Invitation<% end %>
 <div style="text-align: center; margin-top: 20px">
-   <div class="span4 offset2">
-     <h2>Stay in touch.</h2>
+	<div class="logo"></div>
+   <div class="description">
+     <h1><span class="blue-keyword">Plentus</span> is a web app for managing your pursuit of wealth, health, and all things in abundance.</h1>
    </div>
-   <div class="span4">
-<div>
+   <div class="form-email">
 <%= simple_form_for @visitor do |f| %>
-<%= f.error_notification %>
-<%= f.input :email, label: false, :placeholder => 'your@emailaddress.com' %> 
-<br/>
+<%= f.error_notification message: 'The email address in invalid' %>
+<%= f.input :email, label: false, error: false, :placeholder => 'your@emailaddress.com' %> 
 <%= f.submit "Request an Invite", :class => "btn btn-primary"%>
 <% end %> 
-</div>
    </div>
  </div>

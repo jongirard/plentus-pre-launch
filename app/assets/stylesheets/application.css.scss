@@ -11,15 +11,14 @@
  *= require_self
  *= require_tree .
  */
-
-main {
-background-color: #eee;
-padding: 20px;
-margin: 0 -20px;
--webkit-border-radius: 0 0 6px 6px; 
--moz-border-radius: 0 0 6px 6px; 
-border-radius: 0 0 6px 6px; 
--webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15); 
--moz-box-shadow: 0 1px 2px rgba(0,0,0,.15); 
-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+ @font-face {font-family: 'ProximaNova-Thin';
+src: font-url("ProximaNova_Thin.eot"); src: font-url("ProximaNova_Thin.eot?#iefix") format('embedded-opentype'), font-url("ProximaNova_Thin.woff") format('woff'), font-url("ProximaNova_Thin.ttf") format('truetype');}
+html {
+height: 100%;
+}
+body {
+background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…gd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4="),asset-url("bgnoise_lg_dark.png", image);
+background: radial-gradient(farthest-side ellipse at 10% 0, rgba(210,215,215,0.9), rgba(206,219,223,0.89), rgba(235,239,232,0.9)), asset-url("bgnoise_lg_dark.png", image);
+background: -webkit-radial-gradient(10% 0, farthest-side ellipse, rgba(210,215,215,0.9), rgba(206,219,223,0.89), rgba(235,239,232,0.9)),asset-url("bgnoise_lg_dark.png", image);
+background: -moz-radial-gradient(10% 0, farthest-side ellipse, rgba(210,215,215,0.9), rgba(206,219,223,0.89), rgba(235,239,232,0.9)),asset-url("bgnoise_lg_dark.png", image);
 }
