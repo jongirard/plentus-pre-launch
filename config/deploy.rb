@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require "rvm/capistrano"
 
 server "plentusrails.goplentus.com", :web, :app, :db, primary: true
 
