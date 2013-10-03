@@ -1,6 +1,12 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
+set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
+set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
+
+before 'deploy:setup', 'rvm:install_rvm'  # install/update RVM
+before 'deploy:setup', 'rvm:install_ruby'
+
 server "plentusrails.goplentus.com", :web, :app, :db, primary: true
 
 set :application, "plentus-pre-launch"
@@ -12,7 +18,7 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "https://github.com/jongirard/#{application}.git"
 set :branch, "master"
-set :rvmrubystring, :local
+
 
 
 
@@ -52,6 +58,4 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
-  before "deploy:setup", "rvm:install_rvm" # install/update RVM
-  before "deploy:setup", "rvm:install_ruby" # install Ruby and create gemset
 end
