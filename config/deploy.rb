@@ -1,10 +1,6 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-default_environment["PATH"]         = "/home/deploy/.rvm/gems/ruby-2.0.0-p247/bin:/home/deploy/.rvm/gems/ruby-2.0.0-p247@global/bin:/home/deploy/.rvm/rubies/ruby-2.0.0-p247/bin:/home/deploy/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
-default_environment["GEM_HOME"]     = "/home/deploy/.rvm/gems/ruby-2.0.0-p247"
-default_environment["GEM_PATH"]     = "/home/deploy/.rvm/gems/ruby-2.0.0-p247:/home/deploy/.rvm/gems/ruby-2.0.0-p247@global"
-default_environment["RUBY_VERSION"] = "ruby-2.0.0-p247"
 server "plentusrails.goplentus.com", :web, :app, :db, primary: true
 
 set :application, "plentus-pre-launch"
