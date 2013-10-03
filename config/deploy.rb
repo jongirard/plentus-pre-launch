@@ -1,13 +1,11 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
+default_environment["PATH"]         = "/home/deploy/.rvm/gems/ruby-2.0.0-p247/bin:/home/deploy/.rvm/gems/ruby-2.0.0-p247@global/bin:/home/deploy/.rvm/rubies/ruby-2.0.0-p247/bin:/home/deploy/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+default_environment["GEM_HOME"]     = "/home/deploy/.rvm/gems/ruby-2.0.0-p247"
+default_environment["GEM_PATH"]     = "/home/deploy/.rvm/gems/ruby-2.0.0-p247:/home/deploy/.rvm/gems/ruby-2.0.0-p247@global"
+default_environment["RUBY_VERSION"] = "ruby-2.0.0-p247"
 server "plentusrails.goplentus.com", :web, :app, :db, primary: true
-
-set :rvmrubystring, :local
-
-before 'deploy:setup', 'rvm:install_rvm' # install/update RVM
-
-before 'deploy:setup', 'rvm:install_ruby' # install Ruby and create gemset
 
 set :application, "plentus-pre-launch"
 set :user, "deploy"
@@ -18,6 +16,7 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "https://github.com/jongirard/#{application}.git"
 set :branch, "master"
+set :rvmrubystring, :local
 
 
 
@@ -57,4 +56,6 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
+  before "deploy:setup", "rvm:install_rvm" # install/update RVM
+  before "deploy:setup", "rvm:install_ruby" # install Ruby and create gemset
 end

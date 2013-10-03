@@ -173,6 +173,7 @@ DEPENDENCIES
   activerecord-tableless
   better_errors
   bootstrap-sass (~> 2.3.2.2)
+  bundler
   capistrano (~> 2.15.5)
   coffee-rails (~> 4.0.0)
   figaro
