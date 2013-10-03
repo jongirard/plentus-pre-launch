@@ -17,7 +17,12 @@ gem 'gibbon'
 gem 'google_drive'
 gem 'high_voltage'
 gem 'simple_form', '>= 3.0.0.rc' 
+gem 'capistrano', '~> 2.15.5'
 group :development do
 gem 'better_errors'
 gem 'quiet_assets'
+end
+group :production do
+gem 'unicorn'
+gem 'pg'
 end

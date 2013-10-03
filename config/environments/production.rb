@@ -77,4 +77,6 @@ PlentusPreLaunch::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  server "plentusrails.goplentus.com", :app, :web, :db, :primary => true
+  set :deploy_to, "/public/plentus-pre-launch"
 end
