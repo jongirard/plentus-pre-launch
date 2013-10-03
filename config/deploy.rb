@@ -3,6 +3,12 @@ require "rvm/capistrano"
 
 server "plentusrails.goplentus.com", :web, :app, :db, primary: true
 
+set :rvmrubystring, :local
+
+before 'deploy:setup', 'rvm:install_rvm' # install/update RVM
+
+before 'deploy:setup', 'rvm:install_ruby' # install Ruby and create gemset
+
 set :application, "plentus-pre-launch"
 set :user, "deploy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
@@ -12,6 +18,8 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "https://github.com/jongirard/#{application}.git"
 set :branch, "master"
+
+
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
