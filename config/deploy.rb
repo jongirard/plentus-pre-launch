@@ -2,7 +2,6 @@ require "bundler/capistrano"
 require "rvm/capistrano"
 
 set :rvm_ruby_string, :local              # use the same ruby as used locally for deployment
-set :rvm_autolibs_flag, "read-only"       # more info: rvm help autolibs
 
 before 'deploy:setup', 'rvm:install_rvm'  # install/update RVM
 before 'deploy:setup', 'rvm:install_ruby'
@@ -18,9 +17,6 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "https://github.com/jongirard/#{application}.git"
 set :branch, "master"
-
-
-
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
