@@ -6,7 +6,7 @@
      <h1><span class="blue-keyword">Plentus</span> is a web app for managing your pursuit of wealth, health, and all things in abundance.</h1>
    </div>
    <div class="form-email">
-<%= simple_form_for @visitor do |f| %>
+<%= simple_form_for @visitor, remote: true do |f| %>
 <%= f.error_notification message: 'The email address in invalid' %>
 <%= f.input :email, label: false, error: false, :placeholder => 'Type your email address here' %> 
 <%= f.submit "Request an Invite", :class => "btn btn-primary"%>
