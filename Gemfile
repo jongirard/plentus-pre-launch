@@ -14,15 +14,19 @@ gem 'activerecord-tableless'
 gem 'bootstrap-sass', '~> 2.3.2.2' 
 gem 'figaro'
 gem 'gibbon'
-gem 'google_drive'
 gem 'high_voltage'
 gem 'simple_form', '>= 3.0.0.rc' 
-group :development do
+group :development, :test do
 gem 'sqlite3'
 gem 'better_errors'
 gem 'quiet_assets'
 gem 'capistrano', '~> 2.15.5'
 gem 'rvm-capistrano'
+gem 'rspec-rails'
+end
+group :test do
+gem 'factory_girl_rails'
+gem 'capybara'
 end
 group :production do
 gem 'unicorn'
