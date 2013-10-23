@@ -11,7 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
  # learn-rails
 gem 'activerecord-tableless'
-gem 'bootstrap-sass', '~> 2.3.2.2' 
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 gem 'figaro'
 gem 'gibbon'
 gem 'high_voltage'
