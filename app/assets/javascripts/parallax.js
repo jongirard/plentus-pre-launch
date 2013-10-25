@@ -7,9 +7,8 @@ function parallaxScroll(){
     $('.bs-masthead .bottom').css('top',(0-(scrolled*.5))+'px'); 
 }
 $(document).ready(function (){
-	$('.bs-masthead .btn-solid').click(function() {
-	    $('html, body').animate({
-	        scrollTop: $('.bs-masthead .bottom').offset().top 
-			}, 2500); 
+	$('.bs-masthead .btn-solid').click(function(e) {
+	    $('.bs-masthead .bottom').ScrollTo({easing:'swing'}); 
+	e.preventDefault();
 	});
 });

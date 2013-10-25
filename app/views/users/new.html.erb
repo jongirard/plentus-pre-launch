@@ -1,0 +1,26 @@
+<% provide(:title, 'Plentus | Sign Up') %>
+<main class="bs-secondaryhead" role="main">
+	<div class="container secondary">
+	<div class="row">
+	<div class="col-xs-12">
+		<div class="logo"></div>
+		<div class="outer-box-transparent">
+			<div class="inner-box">
+				<form role="form">
+				  <div class="form-group">
+				<%= simple_form_for @user do |f| %>
+				<%= f.error_notification %>
+				<label for="user_fullname">First and Last Name</label>
+				<%= f.input :fullname, label: false, class: 'form-control' %>
+				<label for="user_email">Email address</label>
+				<%= f.input :email, label: false %>
+				<%= f.submit "Sign up", :class => "btn btn-primary"%>
+				<% end %>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</main>

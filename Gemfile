@@ -25,8 +25,9 @@ gem 'rvm-capistrano'
 gem 'rspec-rails'
 end
 group :test do
-gem 'factory_girl_rails'
+gem "factory_girl_rails", "~> 4.0"
 gem 'capybara'
+gem "faker", "~> 1.2.0"
 end
 group :production do
 gem 'unicorn'

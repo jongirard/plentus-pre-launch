@@ -1,4 +1,24 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
+  
+def create
+    @user = User.new(secure_params)
+    if @user.valid?
+    @user.subscribe
+    flash[:notice] = "Thank you. You will be notified of our launch at #{@user.email}."
+    redirect_to sign_up_path
+  else
+    render :new
+  end
+end
+
+
+private
+
+  def secure_params
+  params.require(:user).permit(:fullname, :email)
+  end
+  
 end
