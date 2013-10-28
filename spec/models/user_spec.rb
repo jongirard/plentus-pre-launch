@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
   it "has a valid factory" do
-  user = FactoryGirl.create(:user).should be_valid
+    user = FactoryGirl.build(:user).should be_valid
 end
 
   it "is invalid without a name" do
@@ -10,5 +10,14 @@ end
 end
   it "is invalid without an email" do
     FactoryGirl.build(:user, email: nil).should_not be_valid
+end
+  it "is invalid with an already used email" do
+    FactoryGirl.create(:user, email: 'emailalreadyused@somedomain.com')
+    User.new(:fullname => 'Plentus User', :email => 'emailalreadyused@somedomain.com').should_not be_valid
+
+  end
+
+  it "should save when required fields are populated with valid data" do
+    user = FactoryGirl.build(:user).save.should == true
 end
 end

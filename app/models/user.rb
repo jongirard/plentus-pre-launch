@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates_presence_of :fullname, :message => "Required Field"
   validates_presence_of :email, :message => "Required Field"
   validates_format_of :email, :message => "Email Address is invalid", :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
+  validates_uniqueness_of :email, :message => "Email Address already signed up"
   before_save { self.email = email.downcase }
   
   def signup
@@ -10,6 +11,8 @@ class User < ActiveRecord::Base
     user.save
 
   end
+  
+  after_save { self.delay.subscribe }
   
   def subscribe
      mailchimp = Gibbon::API.new

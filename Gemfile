@@ -15,7 +15,8 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/
 gem 'figaro'
 gem 'gibbon'
 gem 'high_voltage'
-gem 'simple_form', '>= 3.0.0.rc' 
+gem 'simple_form', '>= 3.0.0.rc'
+gem 'delayed_job_active_record' 
 group :development, :test do
 gem 'sqlite3'
 gem 'better_errors'
