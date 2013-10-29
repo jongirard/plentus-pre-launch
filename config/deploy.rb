@@ -11,6 +11,7 @@ server "plentusrails.goplentus.com", :web, :app, :db, primary: true
 
 set :application, "plentus-pre-launch"
 set :user, "deploy"
+set :port, 222
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
@@ -21,6 +22,7 @@ set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
+ssh_options[:port] = 222
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 after "deploy:stop",    "delayed_job:stop"
