@@ -1,5 +1,6 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
+require 'delayed/recipes'
 
 set :rvm_ruby_string, :local
 
@@ -22,6 +23,9 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
+after "deploy:stop",    "delayed_job:stop"
+after "deploy:start",   "delayed_job:start"
+after "deploy:restart", "delayed_job:restart"
 
 namespace :deploy do
   %w[start stop restart].each do |command|
