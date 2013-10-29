@@ -1,6 +1,5 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
-require 'delayed/recipes'
 
 set :rvm_ruby_string, :local
 
@@ -23,11 +22,7 @@ set :branch, "master"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 ssh_options[:port] = 222
-set :rails_env, "production"
 
-after "deploy:stop",    "delayed_job:stop"
-after "deploy:start",   "delayed_job:start"
-after "deploy:restart", "delayed_job:restart"
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -37,24 +32,6 @@ namespace :deploy do
     end
   end
   
-  namespace :delayed_job do
-
-  desc "Stop the delayed_job process"
-  task :stop, :roles => :app do
-    run "cd #{current_path}; script/delayed_job -e #{rails_env} stop"
-  end
-
-  desc "Start the delayed_job process"
-  task :start, :roles => :app do
-    run "cd #{current_path}; script/delayed_job -e #{rails_env} start"
-  end
-
-  desc "Restart the delayed_job process"
-  task :restart, :roles => :app do
-    run "cd #{current_path}; script/delayed_job -e #{rails_env} restart"
-  end
-end
-
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
