@@ -12,8 +12,8 @@ end
     FactoryGirl.build(:user, email: nil).should_not be_valid
 end
   it "is invalid with an already used email" do
-    FactoryGirl.create(:user, email: 'emailalreadyused@somedomain.com')
-    User.new(:fullname => 'Plentus User', :email => 'emailalreadyused@somedomain.com').should_not be_valid
+    user = FactoryGirl.create(:user)
+    User.new(:fullname => 'Plentus User', :email => 'user.email').should_not be_valid
 
   end
 

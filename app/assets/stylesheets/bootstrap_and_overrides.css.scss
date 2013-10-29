@@ -1,6 +1,6 @@
 @import "twitter/bootstrap";
 html, body {
-background-color: #E4E7EA;
+background-color: #F2F2F7;
 height: 100%;
 }
 .top {
@@ -17,15 +17,15 @@ position: relative;
 z-index: 1;
 }
 .bottom {
--moz-box-shadow: 0px -20px 25px -25px rgba(0, 0, 0, 0.06);
--webkit-box-shadow: 0px -20px 25px -25px rgba(0, 0, 0, 0.06);
-box-shadow: 0px -20px 25px -25px rgba(0, 0, 0, 0.06);
+-moz-box-shadow: 0px -20px 25px -25px rgba(0, 0, 0, 0.04);
+-webkit-box-shadow: 0px -20px 25px -25px rgba(0, 0, 0, 0.04);
+box-shadow: 0px -20px 25px -25px rgba(0, 0, 0, 0.04);
 min-height: 100%;
 height: 450px;
 padding-top: 85px;
 position: relative;
 z-index: 9999;
-background-color: #E4E7EA;
+background-color: #F2F2F7;
 width: 100%;
 min-width: 1200px;
 -webkit-transform: translate3d(0,0,0);
@@ -267,4 +267,43 @@ border-bottom-color: #d63969;
 border-width: 5px;
 right: 30px;
 margin-left: -5px;
+}
+.container.icons {
+height: 40px;
+padding-top: 60px;
+padding-right: 125px;
+}
+.container.icons .social {
+width: 40px;
+height: 40px;
+background-color: #EDEDF4;
+border-radius: 4px;
+border: 1px solid #F5F5F5;
+box-shadow: inset 0 1px 1px #E3E5E8, inset 0 -1px #E3E5E8, inset 1px 0px #E3E5E8, inset -1px 0px #E3E5E8;
+   -o-box-shadow: inset 0 1px 1px #E3E5E8, inset 0 -1px #E3E5E8, inset 1px 0px #E3E5E8, inset -1px 0px #E3E5E8;
+   -webkit-box-shadow: inset 0 1px 1px #E3E5E8, inset 0 -1px #E3E5E8, inset 1px 0px #E3E5E8, inset -1px 0px #E3E5E8;
+   -moz-box-shadow: inset 0 1px 1px #E3E5E8, inset 0 -1px #E3E5E8, inset 1px 0px #E3E5E8, inset -1px 0px #E3E5E8;
+float: right;
+display: inline-block;
+margin-left: 7px;
+}
+.container.icons .social.social-twitter {
+padding-top: 8px;
+padding-left: 2px;
+}
+.container.icons .social.social-fb {
+padding-top: 5px;
+padding-left: 12px;
+}
+.container.icons .social .btn.social-twitter {
+width: 31px;
+height: 22px;
+background-repeat: no-repeat;
+background-image: asset-url("twitterico.png");
+}
+.container.icons .social .btn.social-fb {
+width: 12px;
+height: 27px;
+background-repeat: no-repeat;
+background-image: asset-url("fbico.png");
 }
