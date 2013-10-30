@@ -10,14 +10,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
  # learn-rails
-gem 'activerecord-tableless'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 gem 'figaro'
 gem 'gibbon'
 gem 'high_voltage'
 gem 'simple_form', '>= 3.0.0.rc'
-gem 'daemons'
-gem 'delayed_job_active_record'
+gem 'delayed_job_active_record', '~> 4.0.0'
 group :development, :test do
 gem 'sqlite3'
 gem 'better_errors'
@@ -35,4 +33,5 @@ end
 group :production do
 gem 'unicorn'
 gem 'pg'
+gem 'daemons'
 end
