@@ -1,4 +1,11 @@
 /*global define:false require:false */
+$(document).ready(function (){
+	$('.bs-masthead .btn-solid').click(function(e) {
+	    $('.bs-masthead .bottom').ScrollTo({easing:'swing'}); 
+	e.preventDefault();
+	});
+});
+
 (function (name, context, definition) {
 	if (typeof module != 'undefined' && module.exports) module.exports = definition();
 	else if (typeof define == 'function' && define.amd) define(definition);

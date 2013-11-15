@@ -16,6 +16,7 @@ gem 'gibbon'
 gem 'high_voltage'
 gem 'simple_form', '>= 3.0.0.rc'
 gem 'delayed_job_active_record', '~> 4.0.0'
+gem 'feedzirra'
 group :development, :test do
 gem 'sqlite3'
 gem 'better_errors'
