@@ -1,0 +1,4 @@
+<% @post.each do |post| %>
+    <%= post.name %>
+	<%= sanitize(post.summary.truncate(500, separator: '</p>')) %>
+  <% end %>

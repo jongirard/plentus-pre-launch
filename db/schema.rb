@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 20131113075800) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
-  create_table "feed_entries", force: true do |t|
+  create_table "posts", force: true do |t|
+    t.integer  "guid"
     t.string   "name"
-    t.text     "summary"
     t.string   "author"
+    t.text     "summary"
     t.datetime "published_at"
-    t.string   "guid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
