@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= favicon_link_tag %>
+<title><%= content_for?(:title) ?  yield(:title) : "Plentus" %></title>
+<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Plentus is a web app for managing your pursuit of wealth, health, and all things in abundance." %>">
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<%= yield %>
+	
+	</body>
+	</html>

@@ -327,10 +327,23 @@ color: #867F97;
 background-color: #F2F2F7;
 }
 main.bs-bloghead {
+background-color: #F2F2F7;
+-moz-box-shadow: 0px 15px 20px 5px rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0px 15px 20px 5px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 15px 20px 5px rgba(0, 0, 0, 0.2);
+}
+main.bs-bloghead .top .container.upper .blog.summary p {
+padding-top: 15px;
+}
+main.bs-bloghead.index .top .container.upper .blog.summary p {
+padding-top: 0px;
+}
+main.bs-bloghead.index {
 height: 100%;
 }
 main.bs-bloghead .top {
 background-image: none;
+min-height: 500px;
 }
 main.bs-bloghead .top .container.upper {
 width: 1100px;
@@ -340,42 +353,73 @@ main.bs-bloghead .top .container.upper .row {
 text-align: left;
 }
 main.bs-bloghead .blog.name {
-padding-bottom: 40px;
+padding-bottom: 20px;
 padding-top: 40px;
 }
 main.bs-bloghead.index .blog.name {
 padding-bottom: 15px;
 padding-top: 0px;
+margin-top: -5px;
+}
+main.bs-bloghead .blog.author.date {
+padding-top: 30px;
+color: #565B79;
+font-size: 16px;
 }
 main.bs-bloghead.index .blog.author.date {
 padding-top: 50px;
 color: #868E9C;
+font-size: 16px;
 }
 main.bs-bloghead .blog.name h3 {
 color: #565B79;
 font-size: 24px;
 font-weight: normal;
 }
+main.bs-bloghead.index .blog.name h3 a {
+color: #565B79;
+}
+main.bs-bloghead.index .blog.name h3 a:hover {
+text-decoration: none;
+color: #2D314E;
+}
+main.bs-bloghead.index .blog.read-more {
+padding-bottom: 10px;
+padding-top: 10px;
+}
+main.bs-bloghead.index .blog.read-more a {
+color: #565B79;
+font-size: 16px;
+}
+main.bs-bloghead.index .blog.read-more a:hover {
+text-decoration: none;
+color: #2D314E;
+}
+main.bs-bloghead.index .blog.read-more a:after {
+content: '\2192';
+margin-left: .5em;
+}
 main.bs-bloghead .blog.summary {
 color: #868E9C;
 line-height: 28px;
 font-size: 17px;
+padding-bottom: 10px;
+}
+main.bs-bloghead.index .hr.span {
+border-top: 1px solid rgba(6,8,8,0.12);
+border-bottom: 1px solid rgba(255,255,255,0.15);
+margin-top: 55px;
+margin-bottom: 15px !important;
 }
 #disqus_thread {
 width: 1070px;
 min-height: 300px;
 margin-left: auto;
 margin-right: auto;
-padding-top: 25px;
+padding-top: 75px;
 padding-bottom: 40px;
 background-color: #F0F2F8;
 }
 #disqus_thread iframe#dsq-2 html body #layout header nav#global-nav ul li#post-count h4 {
 color: #565B79;
-}
-.alert {
-width: 1200px;
-margin-left: auto;
-margin-right: auto;
-margin-top: 30px;
 }
