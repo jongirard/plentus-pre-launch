@@ -1,4 +1,16 @@
+<% provide(:title, 'Plentus Blog - Recent Posts') %>
+<main class="bs-bloghead index" role="main">
+<div class="top">
+<div class="container upper">
+<div class="row">
+<div class="col-xs-12">
 <% @post.each do |post| %>
-    <%= post.name %>
-	<%= sanitize(post.summary.truncate(500, separator: '</p>')) %>
-  <% end %>
+<div class="blog author date">Posted by <%= post.author.split(' ').first %> on <%= post.published_at.strftime("%b %e, %Y") %></div>
+<div class="blog name"><h3><%= post.name %></h3></div>
+<div class="blog summary"><%= sanitize(post.summary.truncate(500, separator: '</p>')) %></div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+</main>

@@ -1,7 +1,13 @@
 class Post < ActiveRecord::Base
   
+  before_create :create_slug
+  
 def to_param 
-  [id, self.name.parameterize].join("-")
+  slug
+end
+
+def create_slug
+  self.slug = self.name.parameterize
 end
   
 def self.update_from_feed
@@ -12,15 +18,16 @@ def self.update_from_feed
     
 end
 
+
   private
   
   def self.add_entries(entries)
     entries.each do |entry|
       unless exists? :guid => entry.id
       create!(guid: entry.id, name: entry.title, author: entry.author, summary: entry.summary, published_at: entry.published)
-      flash[:notice] = "Feeds Imported"
     end
   end
+
 end
 end
 

@@ -2,18 +2,23 @@ class PostsController < ApplicationController
   
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   
+  
   def index
     @post = Post.all
-    self.create
+    @post = Post.all.order('created_at DESC')
   end
   
   def create
     @post.update_from_feed
   end
+
   
   def show
-     @post = Post.find(params[:id])
-     redirect_to_good_slug(@post) and return if bad_slug?(@post)
+     @slug = Post.find_by guid: params[:guid]
+     @post = Post.find_by_slug(params[:guid])
+     if request.path != blog_path(@post)
+       redirect_to blog_path(@slug), status: :moved_permanently
+     end
   end
    
    private

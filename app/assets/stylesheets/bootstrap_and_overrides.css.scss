@@ -4,7 +4,7 @@ background-color: #F2F2F7;
 height: 100%;
 }
 .top {
-min-height: 703px;
+min-height: 630px;
 width: 100%;
 min-width: 1200px;
 background-size: cover;
@@ -325,4 +325,57 @@ color: #867F97;
 }
 .nav-items .nav > li > a:hover {
 background-color: #F2F2F7;
+}
+main.bs-bloghead {
+height: 100%;
+}
+main.bs-bloghead .top {
+background-image: none;
+}
+main.bs-bloghead .top .container.upper {
+width: 1100px;
+padding-top: 30px;
+}
+main.bs-bloghead .top .container.upper .row {
+text-align: left;
+}
+main.bs-bloghead .blog.name {
+padding-bottom: 40px;
+padding-top: 40px;
+}
+main.bs-bloghead.index .blog.name {
+padding-bottom: 15px;
+padding-top: 0px;
+}
+main.bs-bloghead.index .blog.author.date {
+padding-top: 50px;
+color: #868E9C;
+}
+main.bs-bloghead .blog.name h3 {
+color: #565B79;
+font-size: 24px;
+font-weight: normal;
+}
+main.bs-bloghead .blog.summary {
+color: #868E9C;
+line-height: 28px;
+font-size: 17px;
+}
+#disqus_thread {
+width: 1070px;
+min-height: 300px;
+margin-left: auto;
+margin-right: auto;
+padding-top: 25px;
+padding-bottom: 40px;
+background-color: #F0F2F8;
+}
+#disqus_thread iframe#dsq-2 html body #layout header nav#global-nav ul li#post-count h4 {
+color: #565B79;
+}
+.alert {
+width: 1200px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 30px;
 }
