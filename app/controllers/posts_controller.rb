@@ -4,9 +4,9 @@ class PostsController < ApplicationController
   
   
   def index
-    @post = Post.all
-    @post = Post.all.order('created_at DESC')
+    @post = Post.all.order('created_at ASC')
   end
+
   
   def create
     @post.update_from_feed
@@ -25,7 +25,6 @@ class PostsController < ApplicationController
    
    def record_not_found
      redirect_to :blog_index
-     flash[:error] = "Post does not exist"
    end
 end
 

@@ -4,12 +4,16 @@
 <div class="container upper">
 <div class="row">
 <div class="col-xs-12">
+<% if @post.blank? %>
+<div class ="blog empty">At this time there are no blog posts to display.</div>
+<% else %>
 <% @post.each do |post| %>
 <div class="blog author date">Posted by <%= post.author.split(' ').first %> on <%= post.published_at.strftime("%b %e, %Y") %></div>
 <div class="blog name"><h3><%= link_to "#{post.name}", blog_path(post.slug) %></h3></div>
 <div class="blog summary"><%= sanitize(post.summary.truncate(500, separator: '</p>')) %></div>
 <div class="blog read-more"><%= link_to "Read More", blog_path(post.slug) %></div>
 <div class="hr span"></div>
+<% end %>
 <% end %>
 </div>
 </div>
