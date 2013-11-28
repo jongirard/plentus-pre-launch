@@ -15,9 +15,8 @@ def self.update_from_feed
     feed_url = ENV['FEED_URL']
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
     add_entries(feed.entries)
-    
-end
 
+end
 
   private
   

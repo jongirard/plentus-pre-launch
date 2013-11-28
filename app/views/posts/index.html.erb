@@ -5,7 +5,7 @@
 <div class="row">
 <div class="col-xs-12">
 <% if @post.blank? %>
-<div class ="blog empty">At this time there are no blog posts to display.</div>
+<div class ="blog empty">No Blog Posts to Display</div>
 <% else %>
 <% @post.each do |post| %>
 <div class="blog author date">Posted by <%= post.author.split(' ').first %> on <%= post.published_at.strftime("%b %e, %Y") %></div>
@@ -15,6 +15,12 @@
 <div class="hr span"></div>
 <% end %>
 <% end %>
+<% unless @post.blank? %>
+<div class="paginate">
+<%= link_to_previous_page @post, 'Newer', class: "btn btn-submit paginate newer" %>
+<%= link_to_next_page @post, 'Older', class: "btn btn-submit paginate older" %>
+<% end %>
+</div>
 </div>
 </div>
 </div>

@@ -4,9 +4,11 @@ class PostsController < ApplicationController
   
   
   def index
-    @post = Post.all.order('created_at ASC')
+    @post = Post.all.order('published_at DESC').page(params[:page]).per(4)
+    if params[:status] == "fetch"
+      self.create
+    end
   end
-
   
   def create
     @post.update_from_feed
