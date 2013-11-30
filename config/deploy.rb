@@ -1,5 +1,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
+require "./config/boot"
+require "airbrake/capistrano"
 
 set :rvm_ruby_string, :local
 

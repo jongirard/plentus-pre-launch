@@ -18,6 +18,7 @@ gem 'simple_form', '>= 3.0.0.rc'
 gem 'delayed_job_active_record', '~> 4.0.0'
 gem 'feedzirra'
 gem 'kaminari'
+gem 'airbrake'
 group :development, :test do
 gem 'sqlite3'
 gem 'better_errors'
