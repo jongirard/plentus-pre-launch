@@ -27,6 +27,7 @@ module PlentusPreLaunch
     config.after_initialize do |app|
           app.routes.append{match '*path', :to => 'application#routing_error', via: :get}
         end
+    config.time_zone = 'Pacific Time (US & Canada)'
     config.generators do |g| 
       g.test_framework :rspec, 
       :fixtures => true, 
