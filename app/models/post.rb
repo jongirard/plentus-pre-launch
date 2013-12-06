@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   
   before_create :create_slug
+  validates_uniqueness_of :guid
   
 def to_param 
   slug

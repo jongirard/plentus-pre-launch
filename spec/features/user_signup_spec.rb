@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "signup page" do
+describe "Sign Up" do
   context "GET /register" do
     it "displays the signup user page with form fields" do
       visit registration_path
@@ -9,10 +9,13 @@ describe "signup page" do
       page.should have_field 'user_email'
       page.should have_button 'Sign up'
     end
+    it "does have the correct page title" do
+      visit registration_path
+      expect(page).to have_title("Plentus - Beta Sign Up")
+    end 
   end
-end
 
-describe "signup process" do
+describe "Signup Process" do
     
   it "shows a required field error if a required field is blank", :js => true do
     visit registration_path
@@ -39,4 +42,5 @@ describe "signup process" do
     current_path.should eq(registration_path)
     expect(page).to have_content("Thank you. You will be notified of our launch at #{user.email}.")
   end
+end
 end

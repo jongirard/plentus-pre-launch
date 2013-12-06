@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%= favicon_link_tag %>
 <title><%= content_for?(:title) ?  yield(:title) : "Plentus" %></title>
-<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Plentus is a web app for managing your pursuit of wealth, health, and all things in abundance." %>">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Manage your pursuit of wealth, health, and all things in abundance." %>">
+<meta name="keywords" content="personal finance, money management, budget planner, budgeting tools, online money manager, financial planning, personal finance software, finance app" />
+<%= favicon_link_tag %>
 <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
@@ -11,6 +13,5 @@
 <body>
 	<%= render 'layouts/navigation' %>	
 	<%= yield %>
-	
 	</body>
 	</html>

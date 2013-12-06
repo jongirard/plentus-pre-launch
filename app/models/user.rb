@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   end
   
-  after_save { self.delay.subscribe }
+  #after_save { self.delay.subscribe }
   
   def subscribe
      mailchimp = Gibbon::API.new

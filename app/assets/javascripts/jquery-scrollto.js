@@ -1,5 +1,5 @@
 /*global define:false require:false */
-$(document).ready(function (){
+$(document).ready(function(){
 	$('.bs-masthead .btn-solid').click(function(e) {
 	    $('.bs-masthead .bottom').ScrollTo({easing:'swing'}); 
 	e.preventDefault();
