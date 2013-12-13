@@ -1,0 +1,54 @@
+<% provide(:title, 'Plentus - Tour') %>
+<main class="bs-sections tour" role="main">
+<div class="top">
+	<div class="features-menu">
+	<div class="btn-group btn-group-justified features">
+	<a class="scroll btn btn-default btn-dash" href="#dashboard"><div class="flaticon flaticon-dashboard"></div><h3>Dashboard</h4></a>
+	<a class="btn btn-default" href="#analytics"><div class="flaticon flaticon-graph"></div><h3>Analytics</h4></a>
+	<a class="scroll btn btn-default btn-cloud" href="#cloud"><div class="flaticon flaticon-cloud"></div><h3>Cloud-Based</h4></a>
+	<a class="scroll btn btn-default btn-conversations" href="#conversations"><div class="flaticon flaticon-paperplane"></div><h3>Conversations</h4></a>
+	<a class="btn btn-default" href="#support"><div class="flaticon flaticon-float"></div><h3>Support</h3></a>
+	</div>
+	</div>
+<div class="container section-dashboard" id="dashboard">
+<div class="row">
+	<div class="description">
+		<h4>The Dashboard</h4>
+		A detailed overview of what's happening in your life
+	</div>
+	<div class="dashboard-app">
+	</div>
+</div>
+</div>
+<div class="container section-cloud" id="cloud">
+	<div class="row">
+		<div class="description">
+			<h4>100% Cloud Based</h4>
+			Our high availability cloud infrastructure means your finance data is always securely available, anywhere
+		</div>
+		<div class="cloud-large">
+			<%= image_tag("cog-large.png", class: "cog-large") %>
+			<%= image_tag("cog-small.png", class: "cog-small") %>
+		</div>
+	</div>
+</div>
+
+<div class="container section-conversations" id="conversations">
+	<div class="row">
+
+	<div class="description">
+		<h4>Conversations</h4>
+		Ask questions and solidify your financial understanding by speaking with our in-house expert
+		</div>
+		<div class="bubble"></div>
+		<div class="description">Frequently Asked Questions</div>
+		<div class="row one">
+		<div class="col-xs-4 left"><h2>Which plans include conversations?</h2><div class="h2-info">At this time only our Core (Plus+) plan includes conversations. We plan on offering multiple plans featuring conversations at a later date.</div></div>
+		  <div class="col-xs-4 center"><h2>Am I eligible to use conversations?</h2><div class="h2-info">Currently conversations is only available in select regions/countries. Eligibility is determined at the time of your registration/plan selection.</div></div>
+		  <div class="col-xs-4 right"><h2>What can I use conversations for?</h2><div class="h2-info">With conversations, it's like having your own personal financial expert in front of you. If you have a finance question, conversations can help.</div></div>	
+		</div>
+	</div>
+</div>
+<%= render 'layouts/footer' %>
+</div>
+</main>

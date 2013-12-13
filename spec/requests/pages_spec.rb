@@ -28,27 +28,38 @@ describe "Pages" do
     end
   end
   
-  describe "Features Pages" do
+  describe "Feature Tour" do
   
   it "does have the correct page title" do
-  visit '/overview'
-  expect(page).to have_title("Plentus - Overview")
+  visit '/tour'
+  expect(page).to have_title("Plentus - Tour")
 end
 
   it "does have sub navigation (features menu)" do
-  visit '/overview'
-  expect(page).to have_link('OVERVIEW')
-  expect(page).to have_link('CONVERSATIONS')
-  expect(page).to have_link('TRACKING')
-  expect(page).to have_link('BUDGETING')
-  expect(page).to have_link('SUPPORT')
+  visit '/tour'
+  expect(page).to have_link('Dashboard')
+  expect(page).to have_link('Analytics')
+  expect(page).to have_link('Cloud-Based')
+  expect(page).to have_link('Conversations')
+  expect(page).to have_link('Support')
 end
 end
 
-describe "Blog Page" do
-  it "does have the correct page title" do
-  visit '/blog'
-  expect(page).to have_title("Plentus Blog - Recent Posts")
+describe "Pricing Page" do
+
+it "does have the correct page title" do
+visit '/pricing'
+expect(page).to have_title("Plentus - Pricing")
+end
+
+it "does have correct plans, core and plus" do
+  visit '/pricing'
+  expect(page).to have_selector('p.identifier', text: 'CORE')
+  expect(page).to have_selector('p.identifier', text: 'PLUS')
+end
+it "does have plan select link(s)" do
+  visit '/pricing'
+  expect(page).to have_link('GET STARTED TODAY')
 end
 end
 end
