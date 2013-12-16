@@ -58,6 +58,9 @@ namespace :deploy do
   end
   before "deploy", "deploy:check_revision"
 end
+
+after "deploy", "figaro:setup", "figaro:finalize"
+
 namespace :figaro do
   desc "SCP transfer figaro configuration to the shared folder"
   task :setup do
@@ -66,6 +69,6 @@ namespace :figaro do
  
   desc "Symlink application.yml to the release path"
   task :finalize do
-    run "ln -sf #{shared_path}/application.yml #{release_path}/config/application.yml"
+    run "ln -sf #{shared_path}/application.yml #{current_path}/config/application.yml"
   end
 end

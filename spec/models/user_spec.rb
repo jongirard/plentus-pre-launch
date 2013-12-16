@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe User do
+  context "Model" do
   it "has a valid factory" do
     user = FactoryGirl.build(:user).should be_valid
 end
@@ -19,5 +20,6 @@ end
 
   it "should save when required fields are populated with valid data" do
     user = FactoryGirl.build(:user).save.should == true
+end
 end
 end
