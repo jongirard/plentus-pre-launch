@@ -98,11 +98,36 @@ padding-left: 30px;
 .bs-masthead .container.lower .col-xs-4.right{
 padding-right: 35px;
 }
-main.bs-masthead.home .container.lower.footer {
-padding-bottom: 0px;
+.bs-masthead.home .footer .row.footer {
+padding-left: 20px;
 }
-.container.lower.footer {
-padding-bottom: 50px;
+.container.footer {
+padding-bottom: 25px;
+}
+.footer h5 {
+font-size: 16px;
+color: #7274A3;
+text-align: left;
+padding-bottom: 10px;
+}
+.footer ul.footer-lists {
+text-align: left;
+padding: 0px;
+list-style-type: none;
+}
+.footer li.footer-col, .footer li a {
+line-height: 35px;
+color: #BFC6D1;
+font-size: 16px;
+}
+.footer .sales, .footer .social {
+display: inline-block;
+}
+.footer .sales {
+padding-right: 70px;
+}
+.footer .content.h2-info {
+padding-top: 85px;
 }
 .bs-masthead .btn-outline-inverse {
 padding: 12px 40px;
@@ -354,12 +379,10 @@ height: 27px;
 background-repeat: no-repeat;
 background-image: asset-url("fbico.png");
 }
-.container.lower.footer {
-padding-top: 50px;
-}
 .footer .row.footer {
 width: 1125px;
 margin-left: auto;
+margin-right: auto;
 }
 .footer .content {
 text-align: left;
@@ -537,10 +560,6 @@ background-image: asset-url("conversationsheadshot.png");
 background-repeat: no-repeat;
 margin: 30px auto;
 }
-main.bs-sections.tour .container.lower.footer {
-padding-top: 0px;
-padding-left: 33px;
-}
 main.bs-sections.tour .container.lower .plan-identifier {
 font-family: proxima_nova_rgregular, Helvetica Neue, Helvetica, Arial, sans-serif;
 color: #B6BECB;
@@ -574,12 +593,6 @@ main.bs-masthead.pricing .bottom {
 top: -130px;
 z-index: 0;
 padding-top: 140px;
-}
-main.bs-masthead.pricing .footer .row.footer {
-position: absolute;
-margin-bottom: 30px;
-padding-left: 60px;
-margin-top: -50px;
 }
 main.bs-masthead.pricing .container.middle .col-xs-6 {
 padding: 0px;
