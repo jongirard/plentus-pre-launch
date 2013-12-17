@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131117051612) do
+ActiveRecord::Schema.define(version: 20131027203921) do
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -28,19 +28,6 @@ ActiveRecord::Schema.define(version: 20131117051612) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
-
-  create_table "posts", force: true do |t|
-    t.integer  "guid"
-    t.string   "name"
-    t.string   "author"
-    t.text     "summary"
-    t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
-  end
-
-  add_index "posts", ["slug"], name: "index_posts_on_slug"
 
   create_table "users", force: true do |t|
     t.string   "fullname",   null: false
