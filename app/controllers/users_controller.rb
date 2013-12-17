@@ -10,7 +10,7 @@ def create
     if @user.valid?
     @user.signup
     flash[:notice] = "Thank you. You have successfully signed up."
-    redirect_to register_path
+    redirect_to registration_path
   else
     render :new
   end
