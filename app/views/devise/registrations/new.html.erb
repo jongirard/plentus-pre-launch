@@ -1,0 +1,36 @@
+<% provide(:title, 'Plentus - Beta Sign Up') %>
+<main class="bs-secondaryhead" role="main">
+	<div class="container secondary">
+	<div class="row">
+	<div class="col-xs-12">
+		<div class="logo logo-inset"></div>
+		<div class="outer-box-transparent">
+			<div class="inner-box">
+				<div class="note">Sign up below for Plentus</div>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+  	<form role="form">
+	  <div class="form-group">
+	<%= f.input :fullname, label: 'First & Last Name' %>
+	</div>
+	<div class="form-group">
+	<%= f.input :email, label: 'Email Address' %>
+	</div>
+	<div class="form-group">
+	<%= f.input :password, label: 'Password' %>
+	</div>
+	<%= f.submit "Sign up", :class => "btn btn-signup"%>
+	<% end %>
+	
+	</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+
+	
+				

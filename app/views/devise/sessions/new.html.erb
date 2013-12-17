@@ -1,0 +1,28 @@
+<% provide(:title, 'Plentus - Account Login') %>
+<main class="bs-secondaryhead" role="main">
+	<div class="container secondary">
+	<div class="row">
+	<div class="col-xs-12">
+		<div class="logo logo-inset"></div>
+		<div class="outer-box-transparent">
+			<div class="inner-box">
+				<div class="note">Login to Plentus below with your credentials</div>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  	<form role="form">
+	<div class="form-group">
+	<%= f.input :email, label: 'Email Address' %>
+	</div>
+	<div class="form-group">
+	<%= f.input :password, label: 'Password' %>
+	</div>
+	<%= f.submit "Login", :class => "btn btn-signup"%>
+	<% end %>
+	
+	</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
