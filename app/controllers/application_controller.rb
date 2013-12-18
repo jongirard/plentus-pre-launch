@@ -27,4 +27,5 @@ class ApplicationController < ActionController::Base
   def error_generic
     render :template => 'errors/404.html.erb', :layout => false, :status => 404
   end
+  
 end

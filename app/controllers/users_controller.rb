@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  layout "nav_disabled"
   
   def new
     @user = User.new
@@ -10,7 +9,7 @@ def create
     if @user.valid?
     @user.signup
     flash[:notice] = "Thank you. You have successfully signed up."
-    redirect_to registration_path
+    redirect_to register_path
   else
     render :new
   end

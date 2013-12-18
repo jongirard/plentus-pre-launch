@@ -38,5 +38,8 @@ module PlentusPreLaunch
       :request_specs => true 
       g.fixture_replacement :factory_girl, :dir => "spec/factories" 
       end
+      config.to_prepare do
+      Devise::RegistrationsController.layout "nav_disabled"
+    end
   end
 end
