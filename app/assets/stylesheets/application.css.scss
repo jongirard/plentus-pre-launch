@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap_and_overrides
  */
  @font-face {font-family: 'proxima_nova_rgregular';
 src: font-url("proximanovareg-webfont.eot"); src: font-url("proximanovareg-webfont.eot?#iefix") format('embedded-opentype'), font-url("proximanovareg-webfont.woff") format('woff'), font-url("proximanovareg-webfont.ttf") format('truetype');}

@@ -16,3 +16,9 @@
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
 //= require_tree .
+
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
