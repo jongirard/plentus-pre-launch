@@ -2,11 +2,15 @@
 .application-frame {
 margin-left: auto;
 margin-right: auto;
-min-width: 1200px;
+min-width: 1150px;
 
 background-color: #E8ECF4;
 min-height: 750px;
 
+}
+.logo {
+padding-top: 5px;
+padding-left: 25px;
 }
 .container {
 max-width: none !important;
@@ -15,6 +19,9 @@ padding: 0px;
 }
 .row {
 margin: 0px;
+}
+ul.nav li a {
+padding-left: 25px;
 }
 .upper-handle {
 background-color: #37465E;
@@ -29,7 +36,7 @@ background-image: -webkit-linear-gradient(-90deg, rgba(57, 73, 97, 0.75), rgba(4
 background-image: -ms-linear-gradient(-90deg, rgba(57, 73, 97, 0.75), rgba(41, 56, 78, 0.3));
 background-image: linear-gradient(-180deg, rgba(57, 73, 97, 0.75), rgba(41, 56, 78, 0.3));
 padding-top: 1px;
-min-width: 1200px;
+min-width: 1150px;
 }
 .side-panel.top {
 width: 250px;
@@ -88,12 +95,16 @@ box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.02);
 .row.row-offcanvas {
 
 }
+button { 
+outline: none;
+}
+
 button.toggle {
 display: none;
 background-color: transparent;
 border: none;
 color: #E8ECF4;
-font-size: 22px;
+font-size: 20px;
 padding-top: 10px;
 padding-left: 21px;
 }
@@ -101,8 +112,51 @@ padding-left: 21px;
 .sidebar-offcanvas {
   z-index: 9999;
 }
+.alert {
+margin-bottom: 0px;
+border-radius: 0px;
+}
+ul.nav.nav-pills.username, ul.nav.nav-pills.username li a {
+font-size: 16px;
+color: #F5F7FA;
+font-family: proxima_nova_rgregular, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+ul.nav.nav-pills.username a:hover, ul.nav.nav-pills.username a:focus, ul.nav.nav-pills.username a {
+background-color: transparent;
+border: none;
+}
+ul.nav.nav-pills.username .caret {
+border-top-color: #F5F7FA;
+border-bottom-color: #F5F7FA;
+margin-left: 5px;
+}
+ul.nav.nav-pills.username li ul.dropdown-menu li, ul.nav.nav-pills.username li ul.dropdown-menu li a  {
+color: #626A88;
+font-size: 14px;
+}
+ul.nav.nav-pills.username li ul.dropdown-menu li a {
+padding-left: 15px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+ul.nav.nav-pills.username li ul.dropdown-menu li a i.fa {
+padding-right: 10px;
+}
+ul.nav.nav-pills.username li ul.dropdown-menu li a:hover {
+background-color: #F4F7FD;
+}
+ul.nav.nav-pills {
+display: inline-block;
+float: right;
+position: relative;
+top: 4px;
+right: 25px;
+}
+ul.nav.nav-pills.username ul.dropdown-menu {
+left: -36px;
+}
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1325px) {
   .row-offcanvas {
     position: absolute;
     -webkit-transition: all 0.25s ease-out;
@@ -111,7 +165,7 @@ padding-left: 21px;
 	width: 100%;
   }
 button.toggle {
-display: block;
+display: inline-block;
 }
 
   .row-offcanvas-left

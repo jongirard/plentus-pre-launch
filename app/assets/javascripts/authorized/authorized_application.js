@@ -15,4 +15,16 @@
 //= require turbolinks
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
-//= require parallax
+//= require twitter/bootstrap/dropdown
+//= require_tree .
+
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+$(document).on('page:load', function() {
+	$('[data-toggle=offcanvas]').click(function() {
+	    $('.row-offcanvas').toggleClass('active');
+	  });
+	});
