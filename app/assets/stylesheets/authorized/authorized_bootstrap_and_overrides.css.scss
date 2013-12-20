@@ -21,7 +21,7 @@ padding: 0px;
 margin: 0px;
 }
 ul.nav li a {
-padding-left: 25px;
+padding-left: 35px;
 }
 .upper-handle {
 background-color: #37465E;
@@ -57,6 +57,7 @@ background-image: linear-gradient(-180deg, rgba(57, 73, 97, 0.75), rgba(41, 56, 
 }
 .side-panel.top .inner-border {
 border-top: 1px solid #4D6383;
+height: 51px;
 }
 .sidebar-offcanvas {
 width: 249px;
@@ -66,6 +67,36 @@ height: 100%;
 min-height: 750px;
 margin-right: 20px;
 position: relative;
+-moz-box-shadow: inset 0px 4px 15px 0px rgba(0, 0, 0, 0.02);
+-webkit-box-shadow: inset 0px 4px 15px 0px rgba(0, 0, 0, 0.02);
+box-shadow: inset 0px 4px 15px 0px rgba(0, 0, 0, 0.02);
+}
+.sidebar-offcanvas ul.nav {
+position: relative;
+top: 63px;
+}
+.sidebar-offcanvas .nav > li > a:hover, .sidebar-offcanvas .nav > li > a:focus {
+background-color: #E8ECF4;
+color: #7F91A5;
+-moz-box-shadow: inset 0px 4px 15px 0px rgba(0, 0, 0, 0.02);
+-webkit-box-shadow: inset 0px 4px 15px 0px rgba(0, 0, 0, 0.02);
+box-shadow: inset 0px -4px 15px -4px rgba(0, 0, 0, 0.02);
+}
+.sidebar-offcanvas .nav > li > a {
+padding-top: 12px;
+padding-bottom: 12px;
+}
+.sidebar-offcanvas ul.nav li a {
+color: #94A4B7;
+font-size: 15px;
+}
+.sidebar-offcanvas ul.nav li.active a {
+color: #598EC9;
+}
+.sidebar-offcanvas ul li a .glyphicon, .sidebar-offcanvas ul li a .glyphicons {
+margin-right: 25px;
+font-size: 18px;
+vertical-align: top;
 }
 .panel-border-light {
 border-right: 1px solid #B9C0CF;

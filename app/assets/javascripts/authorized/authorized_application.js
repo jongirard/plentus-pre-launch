@@ -22,6 +22,7 @@ $(document).ready(function() {
   $('[data-toggle=offcanvas]').click(function() {
     $('.row-offcanvas').toggleClass('active');
   });
+window.setTimeout(function() { $(".alert").alert('close'); }, 3500);
 });
 $(document).on('page:load', function() {
 	$('[data-toggle=offcanvas]').click(function() {
