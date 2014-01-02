@@ -526,16 +526,17 @@ background-image: asset-url("cloud-large.png");
 background-repeat: no-repeat;
 margin-left: auto;
 margin-right: auto;
+position: relative;
 }
 .container.section-cloud .cloud-large .cog-large {
 position: absolute;
 margin-top: 85px;
-margin-left: -76px;
+left: 235px;
 }
 .container.section-cloud .cloud-large .cog-small {
 position: absolute;
 margin-top: 242px;
-margin-left: -164px;
+left: 145px;
 }
 .cloud-large .cog-large, .cloud-large .cog-small {
 -webkit-transition: all .8s;
