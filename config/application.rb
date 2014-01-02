@@ -24,6 +24,7 @@ module PlentusPreLaunch
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.i18n.enforce_available_locales = true
     config.after_initialize do |app|
           app.routes.append{match '*path', :to => 'application#routing_error', via: :get}
         end
@@ -40,6 +41,7 @@ module PlentusPreLaunch
       end
       config.to_prepare do
       Devise::RegistrationsController.layout "nav_disabled"
+      Devise::SessionsController.layout "nav_disabled"
     end
   end
 end

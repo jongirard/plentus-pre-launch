@@ -33,14 +33,15 @@ describe "Signup Process" do
     expect(page).to have_content("Email Address already signed up")
   end
   
-  it "shows a thank you message on successful form submission", :js => true do
+  it "shows a devise:confirmable message on successful registration form submission", :js => true do
     user = FactoryGirl.build(:user)
     visit register_path
     fill_in "user_fullname", with: user.fullname
     fill_in "user_email", with: user.email
+    fill_in "user_password", with: user.password
     click_button "Sign up"
-    current_path.should eq(register_path)
-    expect(page).to have_content("Thank you. You will be notified of our launch at #{user.email}.")
+    current_path.should eq(login_path)
+    expect(page).to have_content("A message with a confirmation link has been sent to your email address. Please open the link to activate your account.")
   end
 end
 end

@@ -9,7 +9,7 @@
 				<div class="note">Sign up below for Plentus</div>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-
+<%= hidden_field_tag 'plan', params[:plan] %>
   	<form role="form">
 	  <div class="form-group">
 	<%= f.input :fullname, label: 'First & Last Name' %>

@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   unless config.consider_all_requests_local
   #rescue_from Exception, :with => :error_generic
   #rescue_from ActionController::RoutingError, :with => :render_not_found
+  rescue_from ActionController::InvalidAuthenticityToken, :with => :render_already_signed_out
   end
   
   def routing_error
@@ -16,8 +17,24 @@ class ApplicationController < ActionController::Base
   
   private
   
+  def after_sign_in_path_for(resource)
+    finances_path
+  end
+  
+  def after_sign_out_path_for(resource_or_scope)
+    login_path
+  end
+  
+  def after_inactive_sign_up_path_for(resource)
+    login_path
+  end
+  
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :fullname
+  end
+  
+  def render_already_signed_out
+    redirect_to login_path, notice: "You've been signed out elsewhere. Please sign in again."
   end
   
   def render_not_found

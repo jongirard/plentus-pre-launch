@@ -14,7 +14,7 @@ end
 end
   it "is invalid with an already used email" do
     user = FactoryGirl.create(:user)
-    User.new(:fullname => 'Plentus User', :email => 'user.email').should_not be_valid
+    User.new(:fullname => 'Plentus User', :email => 'user.email', :password => '123456').should_not be_valid
 
   end
 

@@ -39,7 +39,7 @@ padding-top: 1px;
 min-width: 1150px;
 }
 .side-panel.top {
-width: 250px;
+width: 239px;
 height: 51px;
 float: left;
 border-right: 1px solid #444F5E;
@@ -60,7 +60,7 @@ border-top: 1px solid #4D6383;
 height: 51px;
 }
 .sidebar-offcanvas {
-width: 249px;
+width: 239px;
 float: left;
 background-color: #D2D6E0;
 height: 100%;
@@ -78,9 +78,9 @@ top: 63px;
 .sidebar-offcanvas .nav > li > a:hover, .sidebar-offcanvas .nav > li > a:focus {
 background-color: #E8ECF4;
 color: #7F91A5;
--moz-box-shadow: inset 0px 4px 15px 0px rgba(0, 0, 0, 0.02);
--webkit-box-shadow: inset 0px 4px 15px 0px rgba(0, 0, 0, 0.02);
-box-shadow: inset 0px -4px 15px -4px rgba(0, 0, 0, 0.02);
+-moz-box-shadow: inset -2px 0px 10px -4px rgba(0, 0, 0, 0.05);
+-webkit-box-shadow: inset -2px 0px 10px -4px rgba(0, 0, 0, 0.05);
+box-shadow: inset -2px 0px 10px -4px rgba(0, 0, 0, 0.05);
 }
 .sidebar-offcanvas .nav > li > a {
 padding-top: 12px;
@@ -182,9 +182,13 @@ float: right;
 position: relative;
 top: 4px;
 right: 25px;
+text-align: right;
 }
 ul.nav.nav-pills.username ul.dropdown-menu {
-left: -36px;
+left: -10px;
+position: relative;
+text-align: left;
+float: right;
 }
 
 @media screen and (max-width: 1325px) {
@@ -201,17 +205,17 @@ display: inline-block;
 
   .row-offcanvas-left
   .sidebar-offcanvas {
-    left: -250px;
+    left: -239px;
 	z-index: 9999;
 	height: 700px;
   }
   .row-offcanvas-left.active {
-    left: 250px;
+    left: 239px;
 	
   }
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 249px;
+    width: 239px;
   }
 }

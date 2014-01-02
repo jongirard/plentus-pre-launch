@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Pages" do
+describe "Marketing Pages" do
   
    it "does have navigation" do
       visit '/home'

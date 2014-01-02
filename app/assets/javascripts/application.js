@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
-//= require parallax
+//= require animations

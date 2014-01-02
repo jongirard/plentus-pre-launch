@@ -42,7 +42,7 @@
 				    </a>
 				    <ul class="dropdown-menu" role="menu">
 					<li><a href="#"><i class="fa fa-cogs"></i>Account Settings</a></li>
-				     <li><%= link_to("<i class=\"fa fa-sign-out\"></i>Logout".html_safe, logout_path) %></li>
+				     <li><%= link_to("<i class=\"fa fa-sign-out\"></i>Logout".html_safe, destroy_user_session_path, :method => :delete) %></li>
 				    </ul>
 				  </li>
 				</ul>
