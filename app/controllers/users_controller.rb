@@ -19,7 +19,7 @@ end
 private
 
   def secure_params
-  params.require(:user).permit(:fullname, :email, :password)
+  params.require(:user).permit(:fullname, :email, :password, :country_id, :state_id)
   end
   
 end

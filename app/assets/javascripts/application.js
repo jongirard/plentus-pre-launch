@@ -11,8 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
 //= require animations
+//= require region_select

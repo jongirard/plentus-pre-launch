@@ -13,20 +13,6 @@ $(document).ready(function(){
 	         $('html,body').animate({scrollTop:dest}, 500,'swing');
 	     });
 });
-$(document).on('page:load', function() {
-$(".scroll").click(function(event){
-         event.preventDefault();
-         //calculate destination place
-         var dest=0;
-         if($(this.hash).offset().top > $(document).height()-$(window).height()){
-              dest=$(document).height()-$(window).height();
-         }else{
-              dest=$(this.hash).offset().top;
-         }
-         //go to destination
-         $('html,body').animate({scrollTop:dest}, 1500,'swing');
-     });
-});
 
 $(window).bind('scroll',function(){
     parallaxScroll();
@@ -56,16 +42,4 @@ window.setInterval(function() {
 		$(".cog-small").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
 	}
 }, 100);
-function readyFn(jQuery) {
-   	$('#btn-scroll').click(function() {
-	      event.preventDefault();
-	      $('#wrapper').animate({
-	        marginLeft: "-=100%"
-	      }, "fast");
-		$('#register').animate({
-	        marginLeft: "-=100%"
-	      }, "fast");
-	 });
-}
-$(document).ready( readyFn );
-$(document).on('page:load', readyFn );
+

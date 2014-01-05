@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'jquery-turbolinks'
  # learn-rails
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 gem 'figaro'
@@ -26,6 +27,7 @@ gem 'quiet_assets'
 gem 'capistrano', '~> 2.15.5'
 gem 'rvm-capistrano'
 gem 'rspec-rails'
+gem 'bullet'
 end
 group :test do
 gem "factory_girl_rails", "~> 4.0"

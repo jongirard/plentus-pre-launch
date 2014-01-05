@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
   end
   
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :fullname
+    devise_parameter_sanitizer.for(:sign_up) << [:fullname, :country_id, :state_id]
   end
   
   def render_already_signed_out

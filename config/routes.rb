@@ -8,7 +8,7 @@ PlentusPreLaunch::Application.routes.draw do
     end
   root :to => 'high_voltage/pages#show', id: 'home'
   devise_scope :user do
-    get "/register", :to => "devise/registrations#new"
+    get "/register", :to => "registrations#new"
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
   end

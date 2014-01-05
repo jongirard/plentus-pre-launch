@@ -18,6 +18,14 @@
 	<%= f.input :email, label: 'Email Address' %>
 	</div>
 	<div class="form-group">
+	<%= f.label :country_id %><br />
+	<%= f.collection_select :country_id, Country.order(:name), :id, :name, include_blank: true %>
+	</div>
+	<div class="form-group">
+	<%= f.label :state_id, "State or Province" %><br />
+	<%= f.grouped_collection_select :state_id, Country.order(:name).includes(:states), :states, :name, :id, :name, include_blank: true %>
+	</div>
+	<div class="form-group">
 	<%= f.input :password, label: 'Password' %>
 	</div>
 	<%= f.submit "Sign up", :class => "btn btn-submit"%>
