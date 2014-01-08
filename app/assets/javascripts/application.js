@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
+//= require twitter/bootstrap/dropdown
 //= require animations
 //= require region_select

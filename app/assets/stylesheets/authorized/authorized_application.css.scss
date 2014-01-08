@@ -11,6 +11,7 @@
  *= require_self
  *= require authorized/authorized_bootstrap_and_overrides
  *= require authorized/glyphicons-regular
+ *= require font-awesome
  */
 @font-face {font-family: 'proxima_nova_rgregular';
 src: font-url("proximanovareg-webfont.eot"); src: font-url("proximanovareg-webfont.eot?#iefix") format('embedded-opentype'), font-url("proximanovareg-webfont.woff") format('woff'), font-url("proximanovareg-webfont.ttf") format('truetype');}

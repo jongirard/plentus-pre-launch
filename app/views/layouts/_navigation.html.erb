@@ -8,6 +8,11 @@
 		  <li><%= link_to "Pricing", page_path('plans') %></li>
 		  <li><a href="http://blog.goplentus.com">Blog</a></li>
 		  <li><%= link_to "Sign Up", page_path('plans') %></li>
+		<li class="dropdown"><%= link_to "Login <span class=\"caret\"></span>".html_safe, login_path, class: "dropdown-toggle", data: { toggle: "dropdown" } %>
+		  <ul class="dropdown-menu">
+		  <%= render 'devise/sessions/form' %>
+		  </ul>
+		  </li>
 		</ul>
 		</div>
 	</div>

@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   
   def signup
 
-    user = User.new(fullname: fullname, email: email, password: password )
+    user = User.new(fullname: fullname, email: email, password: password, country_id: country_id, state_id: state_id)
     user.save
 
   end

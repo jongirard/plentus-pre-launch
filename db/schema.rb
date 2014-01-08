@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140103061315) do
+ActiveRecord::Schema.define(version: 20140106054413) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140103061315) do
     t.datetime "confirmation_sent_at"
     t.integer  "country_id"
     t.integer  "state_id"
+    t.string   "plan_name"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
