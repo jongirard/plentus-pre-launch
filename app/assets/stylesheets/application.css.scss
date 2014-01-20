@@ -24,13 +24,13 @@ main.bs-masthead {
 }
 
 .app-promo {
--moz-box-shadow:    0px 6px 35px 0px rgba(0,0,0,0.08);
--webkit-box-shadow: 0px 6px 35px 0px rgba(0,0,0,0.08);
-box-shadow:         0px 6px 35px 0px rgba(0,0,0,0.08);
+-moz-box-shadow:    0px 6px 35px 0px rgba(0,0,0,0.15);
+-webkit-box-shadow: 0px 6px 35px 0px rgba(0,0,0,0.15);
+box-shadow:         0px 6px 35px 0px rgba(0,0,0,0.15);
 background-image: asset-url("app-promo.png");
 background-size: 100% 100%;
-width: 1019px;
-height: 430px;
+width: 1130px;
+height: 500px;
 margin-left: auto;
 margin-right: auto;
 position: relative;
@@ -41,7 +41,7 @@ main.bs-sections.tour .top {
 background: none;
 }
 .top-navigation {
-background-color: #AAB8CC;
+background-color: #A9BAD3;
 height: 68px;
 min-width: 1200px;
 -moz-box-shadow: 0px -13px 20px 5px rgba(0, 0, 0, 0.25);
@@ -59,9 +59,9 @@ background-size: 144px 39px;
 .logo-inset {
 float: none;
 background-size: 100% 100%;
-width: 174px;
-height: 47px;
-background-image: asset-url("plentuslogoinset.png");
+width: 62px;
+height: 65px;
+background-image: asset-url("plentusiconbg.png");
 background-repeat: no-repeat;
 }
 .footer {
@@ -69,4 +69,26 @@ background-color: #3F414E;
 padding-top: 15px;
 min-width: 1200px;
 width: 100%;
+}
+/* retina displays */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) { 
+.app-promo {
+	background-image: asset-url("app-promo@2x.png");
+	background-size: 1130px 500px;
+}
+.logo-inset {
+background-size: 62px 65px;
+background-image: asset-url("plentusiconbg@2x.png");
+}
+main.bs-secondaryhead {
+background-size: 485px 485px;
+background-image: asset-url("bg_texture@2x.png");
+background-repeat: repeat;
+}
 }

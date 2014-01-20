@@ -11,6 +11,7 @@ PlentusPreLaunch::Application.routes.draw do
     get "/register", :to => "registrations#new"
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
+    get "/passwordreset/new" => "devise/passwords#new"
   end
   #get 'register', to: 'users#new', as: 'registration'
 end

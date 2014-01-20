@@ -5,22 +5,25 @@
 	<div class="col-xs-12">
 		<div class="logo logo-inset"></div>
 		<div class="outer-box-transparent">
-			<div class="inner-box">
-				<div class="note">Login to Plentus below with your credentials</div>
+			
+				<div class="note">Log in to Plentus</div>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   	<form role="form">
 	<div class="form-group">
-	<%= f.input :email, label: 'Email Address' %>
+	<%= f.input :email, :label => false, placeholder: 'Email' %>
 	</div>
 	<div class="form-group">
-	<%= f.input :password, label: 'Password' %>
+	<%= f.input :password, :label => false, placeholder: 'Password' %>
 	</div>
-	<%= f.submit "Login", :class => "btn btn-submit"%>
+	<div class="forgot-password-container">
+	<%= link_to "Forgot?", passwordreset_new_path, class: "forgot" %>
+	</div>
+	<%= f.submit "Login!", :class => "btn btn-solid btn-lg"%>
 	</form>
 <% end %>
 </div>
-</div>
+
 </div>
 </div>
 </div>
