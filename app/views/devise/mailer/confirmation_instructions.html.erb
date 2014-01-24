@@ -1,5 +1,5 @@
-<p>Welcome <%= @email %>!</p>
+<p>Welcome <%= @email %>, and thank you for signing up for Plentus.</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>You can confirm your account email through the link below to begin using your account immediately:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @token) %></p>

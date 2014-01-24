@@ -22,11 +22,11 @@ class ApplicationController < ActionController::Base
   end
   
   def after_sign_out_path_for(resource_or_scope)
-    login_path
+    new_user_session_path
   end
   
   def after_inactive_sign_up_path_for(resource)
-    login_path
+    new_user_session_path
   end
   
   def configure_permitted_parameters
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   end
   
   def render_already_signed_out
-    redirect_to login_path, notice: "You've been signed out elsewhere. Please sign in again."
+    redirect_to new_user_session_path, notice: "You've been signed out elsewhere. Please sign in again."
   end
   
   def render_not_found

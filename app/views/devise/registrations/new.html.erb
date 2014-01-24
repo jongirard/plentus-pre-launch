@@ -4,31 +4,31 @@
 	<div class="row">
 	<div class="col-xs-12">
 		<div class="logo logo-inset"></div>
-		<div class="outer-box-transparent">
+		<div class="outer-box-transparent fade-load">
 			<div class="inner-box">
-				<div class="note">Sign up below for Plentus</div>
+				<div class="note">Sign up for Plentus</div>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 <%= hidden_field_tag 'plan', params[:plan] %>
   	<form role="form">
 	  <div class="form-group">
-	<%= f.input :fullname, label: 'First & Last Name' %>
+	<%= f.input :fullname, label: false, placeholder: 'First & Last Name'%>
 	</div>
 	<div class="form-group">
-	<%= f.input :email, label: 'Email Address' %>
+	<%= f.input :email, label: false, placeholder: 'Email Address' %>
 	</div>
 	<div class="form-group">
 	<%= f.label :country_id %><br />
-	<%= f.collection_select :country_id, Country.order(:name), :id, :name, include_blank: true %>
+	<%= f.collection_select :country_id, Country.order(:name), :id, :name, {include_blank: false, prompt: 'Select your Country'}, {class: 'form-control'} %>
 	</div>
 	<div class="form-group">
 	<%= f.label :state_id, "State or Province" %><br />
-	<%= f.grouped_collection_select :state_id, Country.order(:name).includes(:states), :states, :name, :id, :name, include_blank: true %>
+	<%= f.grouped_collection_select :state_id, Country.order(:name).includes(:states), :states, :name, :id, :name, {include_blank: true}, {class: 'form-control'} %>
 	</div>
-	<div class="form-group">
-	<%= f.input :password, label: 'Password' %>
+	<div class="form-group password">
+	<%= f.input :password, label: false, placeholder: 'Password' %>
 	</div>
-	<%= f.submit "Sign up", :class => "btn btn-submit"%>
+	<%= f.submit "Sign up for #{@plan}", :class => "btn btn-solid btn-lg"%>
 	<% end %>
 	
 	</form>

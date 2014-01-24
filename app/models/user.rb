@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates_presence_of :fullname
   validates_presence_of :email
   validates_presence_of :password
+  validates_presence_of :country_id
+  validates_format_of :fullname, :with => /\A^[a-z ,.'-]+$\z/i
   validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
   validates_uniqueness_of :email
   before_save { self.email = email.downcase }

@@ -27,6 +27,7 @@ en:
           attributes:
             fullname: 
               blank: "Required Field"
+              invalid: "Invalid Characters"
             email:
               blank: "Required Field"
               taken: "Email Address already signed up"

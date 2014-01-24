@@ -17,5 +17,11 @@
 src: font-url("proximanovareg-webfont.eot"); src: font-url("proximanovareg-webfont.eot?#iefix") format('embedded-opentype'), font-url("proximanovareg-webfont.woff") format('woff'), font-url("proximanovareg-webfont.ttf") format('truetype');}
 
 html, body, main.bs-application {
-background-color: #8E99AF;
+background-color: #EDF1FA;
+position: relative;
+height: 100%;
+min-height: 100%;
+background-size: 485px 485px;
+background-image: asset-url("bg_texture.png");
+background-repeat: repeat;
 }

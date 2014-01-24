@@ -11,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
       redirect_to page_path('plans')
     end
   end
-
+  
   
   protected
   
@@ -24,7 +24,7 @@ class RegistrationsController < Devise::RegistrationsController
   
   def check_region
     @plan = params[:plan]
-    if @plan == 'plus' && params[:user][:country_id] != '1039' && params[:user][:state_id] != ['52', '53', '60']
+    if @plan == 'plus' && params[:user][:country_id] != '1039' && params[:user][:state_id] != ['53', '54', '61']
       redirect_to page_path('plans')
       flash[:notice] = "Unfortunately the plus plan isn't available at this time in the region you selected."
     else
@@ -33,6 +33,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
   
   def after_inactive_sign_up_path_for(resource)
-      login_path
+      new_user_session_path
     end
 end

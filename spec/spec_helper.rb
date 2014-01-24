@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require 'database_cleaner'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -22,7 +23,10 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
-
+  config.include(MailerMacros)
+  
+  config.before(:each) { reset_email }
+      
 
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
@@ -44,3 +48,6 @@ RSpec.configure do |config|
 end
 Capybara.asset_host = "http://localhost:3000"
 Capybara.javascript_driver = :poltergeist
+Capybara.register_driver :poltergeist do |app|
+Capybara::Poltergeist::Driver.new(app, inspector: true)
+end

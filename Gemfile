@@ -22,18 +22,21 @@ gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0'
 group :development, :test do
 gem 'sqlite3'
-gem 'better_errors'
+#gem 'better_errors'
 gem 'quiet_assets'
 gem 'capistrano', '~> 2.15.5'
 gem 'rvm-capistrano'
 gem 'rspec-rails'
 gem 'bullet'
+gem 'guard', '>=2.3.0'
+gem "guard-rspec", require: false
 end
 group :test do
 gem "factory_girl_rails", "~> 4.0"
 gem 'capybara'
 gem 'poltergeist'
 gem "faker", "~> 1.2.0"
+gem "database_cleaner", "~> 1.2.0"
 end
 group :production do
 gem 'unicorn'

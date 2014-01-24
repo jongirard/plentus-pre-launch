@@ -43,6 +43,7 @@ module PlentusPreLaunch
       Devise::RegistrationsController.layout "nav_disabled"
       Devise::SessionsController.layout "nav_disabled"
       Devise::PasswordsController.layout "nav_disabled"
+      Devise::ConfirmationsController.layout "nav_disabled"
     end
   end
 end

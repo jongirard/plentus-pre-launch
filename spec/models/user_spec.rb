@@ -12,11 +12,17 @@ end
   it "is invalid without an email" do
     FactoryGirl.build(:user, email: nil).should_not be_valid
 end
-  it "is invalid with an already used email" do
+  it "is invalid without a country_id" do
+    FactoryGirl.build(:user, country_id: nil).should_not be_valid
+end
+it "is invalid without a password" do
+  FactoryGirl.build(:user, password: nil).should_not be_valid
+end
+  it "is invalid with a duplicate email address" do
     user = FactoryGirl.create(:user)
     User.new(:fullname => 'Plentus User', :email => 'user.email', :password => '123456').should_not be_valid
 
-  end
+end
 
   it "should save when required fields are populated with valid data" do
     user = FactoryGirl.build(:user).save.should == true
