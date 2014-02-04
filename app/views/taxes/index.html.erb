@@ -1,0 +1,21 @@
+<% provide(:title, 'Plentus - Tax Calculator') %>
+<% provide(:feature, 'Tax Calculator') %>
+<div class="content">
+
+<% @taxes.each do |tax| %>
+Income: <%= tax.income %>
+Taxes: <%= tax.taxes %>
+RRSP: <%= tax.rrsp %>
+
+<div class="approximate">
+Approximate Taxable Income: <%= tax.taxable_income %>
+<div>
+<div class="approximate">
+Approximate Taxable Payable Federal: <%= tax.federal %>
+</div>
+<div class="approximate">
+Approximate Taxable Payable Provincial: <%= tax.provincial %>	
+</div>
+<% end %>
+
+</div>

@@ -11,21 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
 //= require twitter/bootstrap/dropdown
 //= require_tree .
-
-$(document).ready(function() {
-  $('[data-toggle=offcanvas]').click(function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
-window.setTimeout(function() { $(".alert").alert('close'); }, 3500);
-});
-$(document).on('page:load', function() {
-	$('[data-toggle=offcanvas]').click(function() {
-	    $('.row-offcanvas').toggleClass('active');
-	  });
-	});

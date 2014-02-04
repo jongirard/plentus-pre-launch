@@ -3,7 +3,7 @@ class FinancesController < ApplicationController
   before_filter :authenticate_user!
 def index
   @user = current_user
-  if [53, 54, 60].include? @user.state_id
+  if [52, 53, 60].include? @user.state_id
     flash.now[:notice] = "User is from one of the accepted regions"
   else
     flash.now[:notice] = "User is NOT from one of the accepted regions"

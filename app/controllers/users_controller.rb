@@ -1,25 +1,24 @@
 class UsersController < ApplicationController
-  
-  def new
-    @user = User.new
-  end
-  
-def create
-    @user = User.new(secure_params)
-    if @user.valid?
-    @user.signup
-    flash[:notice] = "Thank you. You have successfully signed up."
-    redirect_to register_path
-  else
-    render :new
-  end
-end
+  def edit
+      @user = current_user
+    end
 
+    def update_password
+      @user = User.find(current_user.id)
+      if @user.update(user_params)
+        # Sign in the user by passing validation in case his password changed
+        sign_in @user, :bypass => true
+        redirect_to root_path
+      else
+        respond_to do |format|
+        format.json { render json: @user.errors.full_messages, status: :unprocessable_entity }
+      end
+      end
+    end
 
-private
+    private
 
-  def secure_params
-  params.require(:user).permit(:fullname, :email, :password, :country_id, :state_id)
-  end
-  
+    def user_params
+      params.required(:user).permit(:password, :password_confirmation)
+    end
 end

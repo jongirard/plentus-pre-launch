@@ -20,11 +20,11 @@
 			<div class="feature-select"><div class="outer-shadow"><button class="btn btn-solid btn-lg features">Finances<span class="caret"></span></button></div></div>
 			<div class="panel-border-light">
 		            <ul class="nav">
-		              <li class="active dashboard"><a href="#"><i class="glyphicon glyphicon-dashboard"></i>Dashboard</a></li>
+		              <li class="active dashboard"><%= link_to("<i class=\"glyphicon glyphicon-dashboard\"></i>Dashboard".html_safe, finances_path) %></li>
 		              <li><a href="#"><i class="glyphicon glyphicon-stats"></i>Year Trend</a></li>
 		              <li><a href="#"><i class="glyphicon glyphicon-usd"></i>Budget Goals</a></li>
 		              <li><a href="#"><i class="glyphicons glyphicons bank"></i>Debt Manager</a></li>
-					  <li><a href="#"><i class="glyphicons glyphicons calculator"></i>Tax Calculator</a></li>
+					  <li><%= link_to("<i class=\"glyphicons glyphicons calculator\"></i>Tax Calculator".html_safe, new_tax_path) %></li>
 					  <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i>Deduction Details</a></li>
 		            </ul>
 		        </div>
@@ -41,19 +41,17 @@
 				       <%= current_user.fullname %><span class="caret"></span>
 				    </a>
 				    <ul class="dropdown-menu" role="menu">
-					<li><a href="#"><i class="fa fa-cogs"></i>Account Settings</a></li>
+					<li class="account"><a href ="#" class="open"><i class="fa fa-cogs"></i>Account Settings</a></li>
 				     <li><%= link_to("<i class=\"fa fa-sign-out\"></i>Logout".html_safe, destroy_user_session_path, :method => :delete) %></li>
 				    </ul>
 				  </li>
 				</ul>
 				<% end %>
 			</div>
-			<div class="main-bar"></div>
+			<div class="main-bar"><span class="feature"><%= content_for?(:feature) ?  yield(:feature) : "Plentus" %></span></div>
 		        <div class="main-panel">
-			
-			<div class="content">
-					
-					</div>
+			<%= yield %>
+
 				</div>
 		</div>
 	</div>
@@ -61,4 +59,3 @@
 	</main>
 	</body>
 	</html>
-	<%= yield %>
