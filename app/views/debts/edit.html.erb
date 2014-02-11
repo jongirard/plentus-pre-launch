@@ -1,0 +1,25 @@
+<% provide(:title, 'Plentus - Debt Manager') %>
+<% provide(:feature, 'Debt Manager') %>
+<div class="content">
+<%= simple_form_for @debt do |f| %>
+				<form role="form">
+				  <div class="form-group">
+				<%= f.input :interest_annual, label: 'annual interest' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :duration, label: 'desired number of months for pay off' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :present_balance, label: 'present balance' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :future_value, label: 'future value' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :budget_monthly, label: 'budgeted monthly amount' %>
+				</div>
+				<%= f.submit "Submit", :class => "btn btn-submit"%>
+				<% end %>
+
+</form>
+</div>

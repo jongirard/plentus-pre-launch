@@ -1,0 +1,10 @@
+<% provide(:title, 'Plentus - Debt Manager') %>
+<% provide(:feature, 'Debt Manager') %>
+<div class="content">
+	<% @debts.each do |debt| %>
+	<%= number_with_precision(debt.monthly_interest, :precision => 2) %>%
+	<%= number_with_precision(debt.payment.abs, :precision => 2) %>
+	<%= number_with_precision(debt.budgeted_duration.abs, :precision => 2, significant: true) %> Months
+	<%= link_to "Update Taxes", edit_debt_path(debt) %>
+	<% end %>
+</div>

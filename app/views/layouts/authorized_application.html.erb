@@ -3,7 +3,7 @@
 <head>
 <title><%= content_for?(:title) ?  yield(:title) : "Plentus - Dashboard" %></title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+<meta name="viewport" content="width=1150, user-scalable=0" />
 <%= favicon_link_tag %>
 <%= stylesheet_link_tag "authorized/authorized_application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "authorized/authorized_application", "data-turbolinks-track" => true %>
@@ -23,8 +23,8 @@
 		              <li class="active dashboard"><%= link_to("<i class=\"glyphicon glyphicon-dashboard\"></i>Dashboard".html_safe, finances_path) %></li>
 		              <li><a href="#"><i class="glyphicon glyphicon-stats"></i>Year Trend</a></li>
 		              <li><a href="#"><i class="glyphicon glyphicon-usd"></i>Budget Goals</a></li>
-		              <li><a href="#"><i class="glyphicons glyphicons bank"></i>Debt Manager</a></li>
-					  <li><%= link_to("<i class=\"glyphicons glyphicons calculator\"></i>Tax Calculator".html_safe, new_tax_path) %></li>
+		              <li><%= link_to("<i class=\"glyphicons glyphicons bank\"></i>Debt Manager".html_safe, index_debt_path) %></li>
+					  <li><%= link_to("<i class=\"glyphicons glyphicons calculator\"></i>Tax Calculator".html_safe, index_tax_path) %></li>
 					  <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i>Deduction Details</a></li>
 		            </ul>
 		        </div>
@@ -41,7 +41,7 @@
 				       <%= current_user.fullname %><span class="caret"></span>
 				    </a>
 				    <ul class="dropdown-menu" role="menu">
-					<li class="account"><a href ="#" class="open"><i class="fa fa-cogs"></i>Account Settings</a></li>
+					<li class="account"><a href ="#"><i class="fa fa-cogs"></i>Account Settings</a></li>
 				     <li><%= link_to("<i class=\"fa fa-sign-out\"></i>Logout".html_safe, destroy_user_session_path, :method => :delete) %></li>
 				    </ul>
 				  </li>

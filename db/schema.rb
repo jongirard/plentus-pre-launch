@@ -11,13 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201003401) do
+ActiveRecord::Schema.define(version: 20140208014451) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "debts", force: true do |t|
+    t.integer  "user_id"
+    t.decimal  "interest_annual", precision: 5, scale: 2
+    t.integer  "duration"
+    t.integer  "present_balance"
+    t.integer  "future_value"
+    t.integer  "budget_monthly"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "debts", ["user_id"], name: "index_debts_on_user_id"
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -50,6 +63,8 @@ ActiveRecord::Schema.define(version: 20140201003401) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "taxes", ["user_id"], name: "index_taxes_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "fullname",                            null: false

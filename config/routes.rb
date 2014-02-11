@@ -5,13 +5,18 @@ PlentusPreLaunch::Application.routes.draw do
       patch 'update_password'
     end
   end
-  resources :finances, only: [:index]
-  resources :taxes, only: [:create, :edit, :update]
   #get '/home', to: redirect('/')
   authenticated :user do
+      resources :finances, only: [:index]
       root :to => "finances#index", :as => "authenticated_root"
+      resources :taxes, only: [:create, :update]
       get "finances/taxes/new" => "taxes#new", :as => :new_tax
       get "finances/taxes/" => "taxes#index", :as => :index_tax
+      get "finances/taxes/:id/" => "taxes#edit", :as => :edit_tax
+      resources :debts, only: [:create, :update]
+      get "finances/debts/new" => "debts#new", :as => :new_debt
+      get "finances/debts/" => "debts#index", :as => :index_debt
+      get "finances/debts/:id/" => "debts#edit", :as => :edit_debt
     end
   root :to => 'high_voltage/pages#show', id: 'home'
   devise_scope :user do
