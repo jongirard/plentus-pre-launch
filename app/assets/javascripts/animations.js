@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	$('.app-promo').animate({marginTop: '-=20px'});
 	$(".scroll").click(function(event){
 	         event.preventDefault();
 	         //calculate destination place
@@ -12,6 +11,9 @@ $(document).ready(function(){
 	         //go to destination
 	         $('html,body').animate({scrollTop:dest}, 500,'swing');
 	     });
+	if ($('main').hasClass('pricing')){
+	$(".top-navigation").addClass("pricing");
+	}
 });
 
 $(window).bind('scroll',function(){
@@ -42,4 +44,3 @@ window.setInterval(function() {
 		$(".cog-small").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
 	}
 }, 100);
-

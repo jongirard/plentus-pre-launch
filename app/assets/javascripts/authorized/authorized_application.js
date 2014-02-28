@@ -17,4 +17,6 @@
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
 //= require twitter/bootstrap/dropdown
+//= require twitter/bootstrap/transition
+//= require twitter/bootstrap/collapse
 //= require_tree .

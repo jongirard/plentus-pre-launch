@@ -1,5 +1,7 @@
 <% provide(:title, 'Plentus - Tax Calculator') %>
-<% provide(:feature, 'Tax Calculator') %>
+<% content_for :feature do %>
+<li><%= link_to "Tax Calculator", show_tax_path(current_user.tax) %></li><li>New Tax</li>
+<% end %>
 <div class="content">
 <%= simple_form_for @tax do |f| %>
 				<form role="form">

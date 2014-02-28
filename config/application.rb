@@ -41,7 +41,7 @@ module PlentusPreLaunch
       g.fixture_replacement :factory_girl, :dir => "spec/factories" 
       end
       config.to_prepare do
-      Devise::RegistrationsController.layout "nav_disabled"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "authorized_account" : "nav_disabled" }
       Devise::SessionsController.layout "nav_disabled"
       Devise::PasswordsController.layout "nav_disabled"
       Devise::ConfirmationsController.layout "nav_disabled"

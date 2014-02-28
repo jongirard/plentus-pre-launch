@@ -1,0 +1,65 @@
+<% provide(:title, 'Plentus - Deduction Details') %>
+<% content_for :feature do %>
+<li>Tax Deduction Details</li>
+<% end %>
+
+
+<div class="content">
+
+	
+<div class="report wide">
+<div class="heading">Tax Deductions Report:</div>			
+<div class="report-outer">
+<div class="report-center wide wide panel-group" id="accordion">
+	<div class="approximate panel panel-default">
+	<span class="heading">Home/Office Deductible Amount:</span><span class="value">$<%= number_with_delimiter(@deduction.home_deductible.ceil) %></span><span class="panel-button"><div class="outer-shadow"><a class="btn btn-solid btn-lg features" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Details</a></div></span>
+	<div id="collapseOne" class="panel-collapse collapse in">
+	      <div class="panel-body">
+	        <ul>
+		<li class="sub-value"><span class="item">Total Square Footage (Home):</span><span class="padded-value"><%= number_with_delimiter(@deduction.home_sqf.floor) %></span></li>
+		<li class="sub-value"><span class="item">Square Footage (Business Usage):</span><span class="padded-value"><%= number_with_delimiter(@deduction.business_sqf.floor) %></span></li>
+		<li class="sub-value"><span class="item">Total Monthly Expenses:</span><span class="padded-value">$<%= number_with_delimiter(@deduction.monthly_expenses.floor) %></span></li>
+		</ul>
+	      </div>
+	    </div>
+	</div>
+	
+	<div class="approximate panel panel-default">
+	<span class="heading">Motor Vehicle Deductible Amount:</span> <span class="value">$<%= number_with_delimiter(@deduction.vehicle_deductible.ceil) %></span><span class="panel-button"><div class="outer-shadow"><a class="btn btn-solid btn-lg features" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Details</a></div></span>
+	<div id="collapseTwo" class="panel-collapse collapse">
+	      <div class="panel-body">
+	       	<ul>
+		<li class="sub-value"><span class="item">Business Kilometres:</span><span class="padded-value"><%= number_with_delimiter(@deduction.business_kilometers.floor) %></span></li>
+		<li class="sub-value"><span class="item">Total Kilometres (Year Start):</span><span class="padded-value"><%= number_with_delimiter(@deduction.start_kilometers.floor) %></span></li>
+		<li class="sub-value"><span class="item">Total Vehicle Expenses:</span><span class="padded-value">$<%= number_with_delimiter(@deduction.vehicle_expenses.floor) %></span></li>
+		</ul>
+	      </div>
+	    </div>
+	</div>
+	
+	<div class="approximate panel panel-default">
+	<span class="heading">Travel Deductible Amount:</span> <span class="value">$<%= number_with_delimiter(@deduction.total_travel_deductible.floor) %></span><div class="panel-button"><div class="outer-shadow"><a class="btn btn-solid btn-lg features" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Details</a></div></div>
+	<div id="collapseThree" class="panel-collapse collapse">
+	      <div class="panel-body">
+	        <ul>
+		<li class="sub-value"><span class="item">Flight Cost:</span><span class="padded-value">$<%= number_with_delimiter(@deduction.short_flight.floor + @deduction.long_flight.floor) %></span></li>
+		<li class="sub-value"><span class="item">Meal Cost:</span><span class="padded-value">$<%= number_with_delimiter(@deduction.short_meal.floor + @deduction.long_meal.floor) %></span></li>
+		<li class="sub-value"><span class="item">Entertainment Cost:</span><span class="padded-value">$<%= number_with_delimiter(@deduction.short_entertainment.floor + @deduction.long_entertainment.floor) %></span></li>
+		<li class="sub-value"><span class="item">Lodging Cost:</span><span class="padded-value">$<%= number_with_delimiter(@deduction.short_lodging.floor + @deduction.long_lodging.floor) %></span></li>
+		</ul>
+	      </div>
+	    </div>
+	</div>
+	<div class="approximate total">
+	<span class="total">Total Deductible Amount:</span> <span class="value">$<%= number_with_delimiter(@deduction.total_deductible.ceil) %></span>
+	</div>
+</div>	
+</div>
+<div class="lower-well-outer">
+	<div class="lower-well">
+		<div class="panel-button small"><div class="outer-shadow"><%= link_to "Update", edit_deduction_path(@deduction), class: "btn btn-solid btn-lg features" %></div></div>
+	</div>
+	</div>
+</div>
+	
+</div>

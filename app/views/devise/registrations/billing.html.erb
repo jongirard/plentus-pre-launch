@@ -1,0 +1,22 @@
+<% provide(:title, 'Plentus - Account Billing') %>
+<% content_for :feature do %>
+<li>Account Billing</li>
+<% end %>
+
+<div class="content">
+	
+	
+</div>
+<% content_for :lower_main do %>
+<div class="account-cancel-outer">
+<h3>Cancel My Account</h3>
+<div class="account-cancel">
+<div class="lower-well-outer">
+	<div class="lower-well">
+<div class="description"><span class="warning-block">WARNING:</span> By clicking "Cancel My Account" you acknowledge that your account will be <span class="underline">permanently</span> removed.</div>
+<span class="panel-button small"><div class="outer-shadow"><%= link_to "Cancel My Account", registration_path(resource_name), :data => { :confirm => "Your account will be immediately deleted. ARE YOU SURE?" }, :method => :delete, class: "btn btn-solid btn-lg features" %></div></span>
+</div>
+</div>
+</div>
+</div>
+<% end %>

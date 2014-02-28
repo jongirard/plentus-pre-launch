@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208014451) do
+ActiveRecord::Schema.define(version: 20140214011337) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140208014451) do
 
   create_table "debts", force: true do |t|
     t.integer  "user_id"
+    t.string   "name"
     t.decimal  "interest_annual", precision: 5, scale: 2
     t.integer  "duration"
     t.integer  "present_balance"
@@ -31,6 +32,28 @@ ActiveRecord::Schema.define(version: 20140208014451) do
   end
 
   add_index "debts", ["user_id"], name: "index_debts_on_user_id"
+
+  create_table "deductions", force: true do |t|
+    t.integer  "user_id"
+    t.decimal  "home_sqf",            precision: 5, scale: 2
+    t.decimal  "business_sqf",        precision: 5, scale: 2
+    t.integer  "monthly_expenses"
+    t.decimal  "business_kilometers", precision: 5, scale: 2
+    t.decimal  "start_kilometers",    precision: 5, scale: 2
+    t.integer  "vehicle_expenses"
+    t.integer  "short_flight"
+    t.integer  "short_meal"
+    t.integer  "short_entertainment"
+    t.integer  "short_lodging"
+    t.integer  "long_flight"
+    t.integer  "long_meal"
+    t.integer  "long_entertainment"
+    t.integer  "long_lodging"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "deductions", ["user_id"], name: "index_deductions_on_user_id"
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false

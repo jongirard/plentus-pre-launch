@@ -2,17 +2,33 @@ class Debt < ActiveRecord::Base
   include Formulas::Debt
   belongs_to :user
   
-  def store_raw_debt
-      debt = Debt.new(user_id: user.id, interest_annual: interest_annual, duration: duration, present_balance: present_balance, future_value: future_value, budget_monthly: budget_monthly)
-      debt.save
-  end
-  
   before_save :default_values
 
     def default_values
+      self.interest_annual ||= '1.5'
+      self.duration ||= '1'
+      self.present_balance ||= '0'
       self.future_value ||= '0'
+      self.budget_monthly ||= '10'
     end
+    
+  def flexible_interest_annual
+    interest_annual
+  end
+
+  def flexible_interest_annual=(interest_annual)
+    self.interest_annual = interest_annual.gsub('%', '') unless interest_annual.blank?
+  end
   
+  ['present_balance','future_value','budget_monthly'].each do |attr|
+      define_method("flexible_#{attr}") do
+        self.send(attr)
+      end
+
+      define_method("flexible_#{attr}=") do |arg|
+        self.send("#{attr}=", arg.tr('$ ,', '')) unless arg.blank?
+      end 
+  end
   
   def monthly_interest
     calculation = self.interest_annual / 12

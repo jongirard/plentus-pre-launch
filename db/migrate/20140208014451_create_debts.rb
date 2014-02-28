@@ -2,6 +2,7 @@ class CreateDebts < ActiveRecord::Migration
   def change
     create_table :debts do |t|
       t.belongs_to :user, index: true
+      t.string  :name
       t.decimal :interest_annual, :precision => 5, :scale => 2
       t.integer :duration
       t.integer :present_balance

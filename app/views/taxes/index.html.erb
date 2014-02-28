@@ -1,5 +1,7 @@
 <% provide(:title, 'Plentus - Tax Calculator') %>
-<% provide(:feature, 'Tax Calculator') %>
+<% content_for :feature do %>
+<li>Tax Calculator</li>
+<% end %>
 <% @taxes.each do |tax| %>
 	<div class="panel-right-outer">
 		<div class="panel-right-inner">
@@ -19,7 +21,7 @@
 
 			
 <div class="report">
-	<div class="heading">Report:</div>			
+	<div class="heading">Tax Report:</div>			
 <div class="report-outer">
 <div class="report-center">
 			<div class="approximate">

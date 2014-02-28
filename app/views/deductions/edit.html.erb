@@ -1,0 +1,57 @@
+<% provide(:title, 'Plentus - Deduction Details') %>
+<% content_for :feature do %>
+<li><%= link_to "Tax Deduction Details", show_deduction_path(current_user.deduction) %></li><li>Update</li>
+<% end %>
+<div class="content">
+<%= simple_form_for @deduction do |f| %>
+				<form role="form">
+				  <div class="form-group">
+				<%= f.input :flexible_home_sqf, label: 'Home Sqf' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_business_sqf, label: 'Business Sqf' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_monthly_expenses, label: 'Monthly Expenses (Rent/Mortgage Interest, Property Taxes, Utilities)' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_business_kilometers, label: 'Business Kilometers' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_start_kilometers, label: 'Total Kilometers (Start of year)' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_vehicle_expenses, label: 'Total Vehicle Expenses' %>
+				</div>
+				If duration of trip is shorter than 7 days
+				<div class="form-group">
+				<%= f.input :flexible_short_flight, label: 'Flight Cost' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_short_meal, label: 'Meal Cost' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_short_entertainment, label: 'Entertainment Cost' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_short_lodging, label: 'Lodging Cost' %>
+				</div>
+				If duration of trip is longer than 7 days
+				<div class="form-group">
+				<%= f.input :flexible_long_flight, label: 'Flight Cost' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_long_meal, label: 'Meal Cost' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_long_entertainment, label: 'Entertainment Cost' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_long_lodging, label: 'Lodging Cost' %>
+				</div>
+				
+				<%= f.submit "Submit", :class => "btn btn-submit"%>
+				<% end %>
+
+</form>
+</div>

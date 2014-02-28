@@ -1,16 +1,17 @@
 class User < ActiveRecord::Base
   belongs_to :country
   belongs_to :state
-  has_many :taxes
-  has_many :debts
+  has_one :tax, :dependent => :destroy
+  has_one :deduction, :dependent => :destroy
+  has_many :debts, :dependent => :destroy
   # Include default devise modules. Others available are:
    # :confirmable, :lockable, :timeoutable and :omniauthable
    devise :database_authenticatable, :registerable,
           :recoverable, :trackable, :validatable, :confirmable
-          
+               
   validates_presence_of :fullname
   validates_presence_of :email
-  validates_presence_of :password
+  validates_presence_of :password, { :on => :create }
   validates_presence_of :country_id
   validates_format_of :fullname, :with => /\A^[a-z ,.'-]+$\z/i
   validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
