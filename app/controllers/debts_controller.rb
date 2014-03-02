@@ -3,14 +3,6 @@ class DebtsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :require_record, :only => :index
   
-  def require_record
-    if Debt.where(:user_id => current_user.id).exists?
-      
-    else
-      redirect_to :new_debt
-    end
-  end
-  
   def new
     @debt = Debt.new
   end
@@ -31,19 +23,30 @@ class DebtsController < ApplicationController
   
   def edit
     @debt = Debt.find(params[:id])
+    authorize @debt, :update?
   end
   
   def show
     @debt = Debt.find(params[:id])
+    authorize @debt
   end
   
   def update
     @debt = Debt.find(params[:id])
-    @debt.update_attributes(secure_params)
+    authorize @debt
+    @debt.update(secure_params)
       redirect_to :index_debt
   end
   
   private
+  
+  def require_record
+    if Debt.where(:user_id => current_user.id).exists?
+      
+    else
+      redirect_to :new_debt
+    end
+  end
   
   def secure_params
     params.required(:debt).permit(:name, :flexible_interest_annual, :duration, :flexible_present_balance, :flexible_future_value, :flexible_budget_monthly)

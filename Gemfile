@@ -20,6 +20,7 @@ gem 'delayed_job_active_record', '~> 4.0.0'
 gem 'airbrake'
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'pundit'
 group :development, :test do
 gem 'sqlite3'
 #gem 'better_errors'

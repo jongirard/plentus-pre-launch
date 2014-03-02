@@ -113,6 +113,11 @@ padding-right: 35px;
 .bs-masthead .footer .row.footer {
 padding-left: 55px;
 }
+.bs-masthead .footer .row.footer .col-xs-6.columns {
+	text-align: right;
+	position: relative;
+	right: 40px;
+}
 .container.footer {
 padding-bottom: 25px;
 }
@@ -212,10 +217,10 @@ color: #E9EAEB;
 .btn-rounded-inset {
 font-family: proxima_nova_rgregular, Helvetica Neue, Helvetica, Arial, sans-serif;
 font-size: 18px;
-padding: 2px 2px;
+padding: 0px 0px;
 text-rendering: optimizeLegibility;
 border-radius: 40px;
-background-color: #F2F2FF;
+background-color: #FFFFFF;
 float: left;
 color: #F2F2F7;
 }
@@ -519,6 +524,17 @@ left: auto;
 border-width: 0 10px 10px;
 border-color: #455066 transparent;
 }
+.nav-items .nav li.dropdown .dropdown-menu .forgot-password {
+	float: left;
+	left: 4px;
+	position: relative;
+	bottom: 0px;
+	top: 30px;
+}
+.nav-items .nav li.dropdown .dropdown-menu .forgot-password a.forgot-modal {
+	color: #7D93B9;
+	text-shadow: none;
+}
 form#new_user input#user_email, form#new_user input#user_password  {
 height: 40px;
 border-bottom-right-radius: 4px;
@@ -724,7 +740,7 @@ background-color: #F9FAFF;
 main.bs-masthead.pricing .container.middle {
 height: 390px;
 position: absolute;
-z-index: 8000;
+z-index: 500;
 left: -5px;
 }
 main.bs-masthead.pricing .bottom {

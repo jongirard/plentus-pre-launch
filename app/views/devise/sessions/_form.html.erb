@@ -12,6 +12,9 @@
 	<%= f.input :password, :label => false, placeholder: 'Password' %>
 	</div>
 	</div>
+	<div class="forgot-password">
+		<%= link_to "Forgot Password?", forgot_password_path, class: "forgot-modal" %>
+	</div>
 	<%= f.submit "Login", :class => "btn btn-solid btn-lg"%>
 	</form>
 <% end %>

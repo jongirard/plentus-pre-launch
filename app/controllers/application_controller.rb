@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  include Pundit
   
   before_filter :configure_permitted_parameters, if: :devise_controller?
   
@@ -9,6 +10,7 @@ class ApplicationController < ActionController::Base
   #rescue_from Exception, :with => :error_generic
   #rescue_from ActionController::RoutingError, :with => :render_not_found
   rescue_from ActionController::InvalidAuthenticityToken, :with => :render_already_signed_out
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   end
   
   def routing_error
@@ -16,6 +18,10 @@ class ApplicationController < ActionController::Base
   end
   
   private
+  
+  def user_not_authorized
+    redirect_to request.headers["Referer"] || root_path #referer not working properly yet
+  end
   
   def after_sign_in_path_for(resource)
     finances_path
