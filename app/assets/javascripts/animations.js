@@ -14,6 +14,9 @@ $(document).ready(function(){
 	if ($('main').hasClass('pricing')){
 	$(".top-navigation").addClass("pricing");
 	}
+	if ($('ul.dropdown-menu form#new_user .control-group').hasClass('error')){
+	$("ul.dropdown-menu span.help-inline").remove();
+	}
 });
 
 $(window).bind('scroll',function(){

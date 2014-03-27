@@ -1,0 +1,26 @@
+<% provide(:title, 'Plentus - Personal Information') %>
+<% content_for :feature do %>
+<li>Personal Information</li>
+<% end %>
+
+<div class="content center-block">
+	
+	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+					<form role="form">
+					  <div class="form-group">
+					<%= f.input :flexible_income, label: 'Annual Income' %>
+					</div>
+					
+					<div class="form-actions">
+						<div class="lower-well-outer">
+							<div class="lower-well">
+					    <span class="panel-button small"><div class="outer-shadow"><%= f.button :submit, "Save", class: "btn btn-solid btn-lg features" %></div></span>
+					  </div>
+					</div>
+					</div>
+					<% end %>
+
+	</form>
+	
+	
+</div>

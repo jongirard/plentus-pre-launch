@@ -18,6 +18,11 @@ PlentusPreLaunch::Application.routes.draw do
       get "finances/debts/" => "debts#index", :as => :index_debt
       get "finances/debts/:id/" => "debts#show", :as => :show_debt
       get "finances/debts/:id/edit" => "debts#edit", :as => :edit_debt
+      resources :expenses, only: [:create]
+      get "finances/expenses/new" => "expenses#new", :as => :new_expense
+      get "finances/expenses/" => "expenses#index", :as => :index_expense
+      get "finances/trends/" => "trends#index", :as => :index_trends
+      get "finances/trends/:year/:month" => "trends#month", :as => :month_trends
     end
   root :to => 'high_voltage/pages#show', id: 'home'
   devise_scope :user do
@@ -27,6 +32,7 @@ PlentusPreLaunch::Application.routes.draw do
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
     get "/passwordreset/new" => "devise/passwords#new", :as => :forgot_password
     get "users/billing" => "registrations#billing", :as => :user_billing
+    get "users/personal" => "registrations#personal", :as => :user_personal
   end
   #get 'register', to: 'users#new', as: 'registration'
 end

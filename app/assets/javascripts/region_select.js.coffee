@@ -1,4 +1,6 @@
 jQuery ->
+  if ($("input#plan").val() == 'plus')
+    $(".country option[value='1228']").remove()
   $('#user_state_id').parent().hide()
   states = $('#user_state_id').html()
   $('#user_country_id').change ->

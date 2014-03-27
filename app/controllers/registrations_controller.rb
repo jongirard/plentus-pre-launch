@@ -1,6 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  before_filter :set_plan, :only => :new
   before_filter :check_region, :only => :create
   
   def new
@@ -32,21 +31,18 @@ class RegistrationsController < Devise::RegistrationsController
     
     def billing
     end
+    
+    def personal
+      @user = current_user
+    end
   
   protected
   
-  def set_plan
-    @plan = params[:plan]
-    if @plan == 'plus'
-      flash.now[:notice] = "Please note: this plan is only available in select regions currently."
-    end
-  end
-  
   def check_region
     @plan = params[:plan]
-    if @plan == 'plus' && params[:user][:country_id] != '1039'
-      redirect_to page_path('plans')
-      flash[:notice] = "Unfortunately the plus plan isn't available at this time in the region you selected."
+    if @plan == 'plus' && params[:user][:country_id] == '1228'
+      redirect_to register_path(:plan => 'core')
+      flash[:notice] = "Only the CORE plan is available in the region you selected, at this time."
     else
       
     end

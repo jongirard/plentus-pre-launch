@@ -296,6 +296,10 @@ margin-right: 55px;
 color: #768BAC;
 text-decoration: none;
 top: -17px;
+opacity: 0.8;
+}
+.crumbs ul li a:hover {
+opacity: 1;
 }
 .crumbs ul li a:after {
 	content: "";
@@ -322,6 +326,7 @@ border-left: 1px solid #D9DEEA;
 padding-left: 1px;
 position: absolute;
 right: 0;
+z-index: 500;
 }
 .panel-right-inner {
 width: 286px;
@@ -503,6 +508,9 @@ background-color: transparent;
 background-color: #DEF2EB;
 border-top: 1px solid #EDF5FF;
 }
+.row.dual.report .approximate.green, .row.wide.report .approximate.green {
+background-color: #DEF2EB;
+}
 .row.dual.report .approximate.lower.green.bottom, .row.wide.report .approximate.lower.green.bottom {
 border-bottom: 1px solid #DFE7F1;
 }
@@ -566,7 +574,11 @@ float: right;
 }
 .row.wide.report .more a {
 	float: right;
-	padding-right: 25px;
+	margin-right: 25px;
+	position: relative;
+}
+.row.wide.report .more a:hover {
+text-decoration: none;
 }
 .row.wide.report .summary-name {
 	float: left;
@@ -574,6 +586,25 @@ float: right;
 }
 .row.wide.report .report-center .approximate.upper {
 	background-color: transparent;
+}
+.new {
+	width: 890px;
+	font-size: 17px;
+	position: relative;
+	top: 40px;
+}
+.new a {
+	float: right;
+	margin-right: 7px;
+	padding: 8px 15px;
+	border-radius: 3px;
+	top: -9px;
+	position: relative;
+	border: 1px solid #428bca;	
+}
+.new a:hover {
+	text-decoration: none;
+	border: 1px solid #2a6496;
 }
 .report.wide  {
 	width: 693px;
@@ -592,8 +623,15 @@ float: right;
 .report.wide .report-center.wide {
 	width: 693px;
 }
+.content.dashboard .description {
+	width: 900px;
+	text-align:center;
+}
+.content.deductions .panel-button .btn.btn-solid.features, .content.debt .panel-button .btn.btn-solid.features {
+	font-size: 15px;
+}
 .report-center.wide .approximate {
-	width: 693px;
+	width: 691px;
 	height: auto;
 	padding-bottom: 20px;
 	padding-left: 0px;
@@ -694,6 +732,37 @@ padding-top: 10px;
 .report.wide .lower-well-outer {
 	margin-top: 10px;
 }
+.value .fa-cog {
+	padding-left: 7px;
+	color: #9399AC;
+}
+.main-panel.expenses form#new_expense {
+	width: 1060px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 60px;
+}
+.bs-application .main-panel.expenses .content li.expense-line {
+background-color: #E1ECF8;
+list-style-type: none;
+padding-left: 25px;
+line-height: 35px;
+}
+.bs-application .main-panel.expenses .content .report-center.dual.left .approximate:nth-child(even) {
+	background-color: #DEE8F2;
+}
+.bs-application .main-panel.expenses .content .report-center.dual.left .approximate .value {
+	padding-right: 30px;
+}
+.bs-application .main-panel.expenses .report {
+	top: 0px;
+}
+.main-panel.expenses .row.dual.report .report-center.dual {
+	width: 100%;
+}
+.main-panel.expenses .row.dual.report .report-center.dual .approximate {
+	width: 100%;
+}
 main.bs-application.account .main-panel {
 	width: 97%;
 }
@@ -712,14 +781,14 @@ main.bs-application.account .form-group.email {
 }
 main.bs-application.account .email-label-container {
 	position: absolute;
-	top: 14px;
+	top: 12px;
 	left: 14px;
-	font-size: 20px;
+	font-size: 17px;
 	font-family: proxima_nova_rgregular, Helvetica Neue, Helvetica, Arial, sans-serif;
 	color: #5C7EBB;
 }
 main.bs-application.account .form-group {
-width: 737px;
+
 }
 main.bs-application.account .form-group .controls input {
 height: 56px;
@@ -733,11 +802,11 @@ box-shadow: none;
 border-radius: 5px;
 }
 main.bs-application.account form#edit_user input#user_email {
-	padding-left: 70px;
+	padding-left: 64px;
 }
-main.bs-application.account form#edit_user input#user_email, main.bs-application.account form#edit_user input#user_password, main.bs-application.account form#edit_user input#user_password_confirmation {
-height: 56px;
-font-size: 20px;
+main.bs-application.account form#edit_user input#user_email, main.bs-application.account form#edit_user input#user_password, main.bs-application.account form#edit_user input#user_password_confirmation, main.bs-application.account input#user_income {
+height: 46px;
+font-size: 17px;
 font-family: proxima_nova_rgregular, Helvetica Neue, Helvetica, Arial, sans-serif;
 color: #000000;
 }
@@ -769,7 +838,7 @@ main.bs-application.account .panel-button.small .btn.btn-solid.features:hover {
 main.bs-application.account form#edit_user .lower-well {
 	margin-top: 20px;
 }
-main.bs-application.account form#edit_user .lower-well .btn.btn-solid.features {
+main.bs-application.account form#edit_user .lower-well .btn.btn-solid.features, main.bs-application.account form#new_user .lower-well .btn.btn-solid.features {
 	color: #7B94C0;
 	font-weight: 500;
 	padding-top: 8px;
@@ -815,7 +884,7 @@ main.bs-application.account span.warning-block {
 }
 main.bs-application.account span.help-inline {
 	position: absolute;
-	margin-top: 55px;
+	margin-top: 45px;
 	padding: 8px 9px;
 	background: #d63969;
 	-webkit-border-radius: 3px;
@@ -888,5 +957,8 @@ main.bs-application.account .row-offcanvas-left
 }
 .main-panel .content {
 	margin-left: 0px;
+}
+main.bs-application.account .main-panel .content {
+	margin-left: auto;
 }
 }

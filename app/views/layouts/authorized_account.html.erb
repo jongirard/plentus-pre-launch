@@ -21,6 +21,7 @@
 			<div class="panel-border-light">
 		            <ul class="nav">
 		<li><%= link_to_unless_current("<i class=\"fa fa-cogs\"></i>Account Settings".html_safe, edit_user_registration_path, ) { link_to("<i class=\"fa fa-cogs\"></i>Account Settings".html_safe, edit_user_registration_path, class: "active") } %></li>
+		<li><%= link_to_unless_current("<i class=\"fa fa-user\"></i>Personal Information".html_safe, user_personal_path, ) { link_to("<i class=\"fa fa-user\"></i>Personal Information".html_safe, user_personal_path, class: "active") } %></li>
 		<li><%= link_to_unless_current("<i class=\"glyphicon glyphicon-credit-card\"></i>Account Billing".html_safe, user_billing_path, ) { link_to("<i class=\"glyphicon glyphicon-credit-card\"></i>Account Billing".html_safe, user_billing_path, class: "active") } %></li>
 		            </ul>
 		        </div>

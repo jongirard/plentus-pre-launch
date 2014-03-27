@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214011337) do
+ActiveRecord::Schema.define(version: 20140319035859) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -71,6 +71,17 @@ ActiveRecord::Schema.define(version: 20140214011337) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
+  create_table "expenses", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "amount"
+    t.string   "expense_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
+
   create_table "states", force: true do |t|
     t.string   "name"
     t.integer  "country_id"
@@ -107,6 +118,7 @@ ActiveRecord::Schema.define(version: 20140214011337) do
     t.datetime "confirmation_sent_at"
     t.integer  "country_id"
     t.integer  "state_id"
+    t.integer  "income"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

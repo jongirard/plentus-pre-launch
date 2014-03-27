@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_one :tax, :dependent => :destroy
   has_one :deduction, :dependent => :destroy
   has_many :debts, :dependent => :destroy
+  has_many :expenses, :dependent => :destroy
   # Include default devise modules. Others available are:
    # :confirmable, :lockable, :timeoutable and :omniauthable
    devise :database_authenticatable, :registerable,
@@ -23,6 +24,14 @@ class User < ActiveRecord::Base
     user = User.new(fullname: fullname, email: email, password: password, country_id: country_id, state_id: state_id)
     user.save
 
+  end
+  
+  def flexible_income
+    income
+  end
+
+  def flexible_income=(income)
+    self.income = income.tr('$ ,', '') unless income.blank?
   end
   
   #after_save { self.delay.subscribe }

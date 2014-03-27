@@ -32,6 +32,10 @@ main.bs-application.account .application-frame {
 main.bs-application.account .upper-handle {
 	min-width: 1050px;
 }
+main.bs-application.account .main-panel {
+	margin-left: 0px;
+}
 main.bs-application.account .main-panel .content {
-	
+	width: 700px;
+	margin-left: auto;
 }

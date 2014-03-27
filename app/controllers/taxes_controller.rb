@@ -3,6 +3,7 @@ class TaxesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :require_record, :only => :show
   before_filter :require_no_record, :only => :new
+  before_filter :authorize_canadian
   
   def new
     @tax = Tax.new
@@ -37,6 +38,13 @@ class TaxesController < ApplicationController
   end
   
   private
+  
+  def authorize_canadian
+    if [1228].include? current_user.country_id
+      redirect_to authenticated_root_path
+    else
+    end
+  end
   
   def user_not_authorized
     redirect_to show_tax_path(current_user.tax)

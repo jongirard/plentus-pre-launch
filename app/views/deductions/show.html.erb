@@ -4,7 +4,7 @@
 <% end %>
 
 
-<div class="content">
+<div class="content deductions">
 
 	
 <div class="report wide">
@@ -13,7 +13,7 @@
 <div class="report-center wide wide panel-group" id="accordion">
 	<div class="approximate panel panel-default">
 	<span class="heading">Home/Office Deductible Amount:</span><span class="value">$<%= number_with_delimiter(@deduction.home_deductible.ceil) %></span><span class="panel-button"><div class="outer-shadow"><a class="btn btn-solid btn-lg features" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Details</a></div></span>
-	<div id="collapseOne" class="panel-collapse collapse in">
+	<div id="collapseOne" class="panel-collapse collapse">
 	      <div class="panel-body">
 	        <ul>
 		<li class="sub-value"><span class="item">Total Square Footage (Home):</span><span class="padded-value"><%= number_with_delimiter(@deduction.home_sqf.floor) %></span></li>

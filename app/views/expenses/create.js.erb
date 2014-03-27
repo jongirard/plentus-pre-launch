@@ -1,0 +1,5 @@
+$('#new_expense').remove();
+$('#new_link').show();
+$('#recurring_expenses').append('<div class="approximate"><%= @expense.name %> <span class="value">$<%= number_with_delimiter(@expense.amount) %></span></div>');
+$('#total').html('$<%= number_with_delimiter(@expense.total_value) %>');
+$('#surplus').html('$<%= number_with_delimiter((current_user.income / 12) - @expense.total_value) %>')

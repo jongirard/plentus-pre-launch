@@ -1,0 +1,7 @@
+<% provide(:title, 'Plentus - Budget Goals') %>
+<% content_for :feature do %>
+<li><%= link_to "Budget Goals", index_expense_path %></li><li>New Expense</li>
+<% end %>
+<div class="content">
+<%= render 'form' %>
+</div>

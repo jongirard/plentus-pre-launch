@@ -1,0 +1,30 @@
+
+<% provide(:title, 'Plentus - Budget Goals') %>
+<% provide(:class, 'expenses') %>
+<% content_for :feature do %>
+<li>Year Trend</li>
+<% end %>
+
+<div class="content expenses">
+
+<div class="row dual report">
+
+			<div class="col-xs-12">
+				<% @expenses_by_month.each do |month, expenses| %>
+			<div class="heading"><%= month.strftime('%B') %></div>			
+			<div class="report-outer">
+			<div class="report-center dual">
+				<% for expense in expenses %>	
+			<div class="approximate green">
+			<%= expense.name %><span class="value"><%= expense.amount %></span>
+			</div>
+			<% end %>
+			<% end %>
+			</div>
+			</div>
+			</div>
+
+</div>
+</div>
+
+

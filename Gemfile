@@ -21,6 +21,7 @@ gem 'airbrake'
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'pundit'
+gem 'gon'
 group :development, :test do
 gem 'sqlite3'
 #gem 'better_errors'

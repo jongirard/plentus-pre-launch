@@ -19,4 +19,5 @@
 //= require twitter/bootstrap/dropdown
 //= require twitter/bootstrap/transition
 //= require twitter/bootstrap/collapse
+//= require highcharts
 //= require_tree .

@@ -6,7 +6,7 @@ width: 100%;
 min-width: 1225px;
 }
 .top {
-min-height: 650px;
+min-height: 635px;
 width: 100%;
 min-width: 1200px;
 background-size: cover;
@@ -870,4 +870,79 @@ width: 100%;
 	position: absolute;
 	left: 100%;
 	top: 200px;
+}
+main.bs-masthead.pricing.register .top {
+	min-height: 876px;
+}
+main.bs-masthead.pricing.register .bottom {
+	margin-top: -176px;
+	margin-bottom: 0px;
+	padding-bottom: 146px;
+	top: 0px;
+	bottom: 0px;
+}
+main.bs-masthead.pricing.register .container.middle {
+	top: -500px;
+}
+main.bs-masthead.pricing.register .container.middle .plans {
+	width: 700px;
+	padding-top: 80px;
+}
+main.bs-masthead.pricing.register .plans .plan.register {
+	padding: 0px;
+	background-color: #FBFDFF;
+}
+main.bs-masthead.pricing.register .plans select {
+	border-radius: 3px;
+	font-weight: 600;
+	font-size: 14px;
+	border: 1px solid #cccccc;
+	background: asset-url("dropdown-arrows.png") no-repeat 98% center #fff;
+	-webkit-appearance: button;
+}
+main.bs-masthead.pricing.register form#new_user .form-control {
+	font-size: 16px;
+	height: 48px !important;
+	margin-bottom: 25px;
+}
+main.bs-masthead.pricing.register form#new_user .fields {
+padding-top: 40px;
+padding-left: 40px;
+padding-right: 40px;
+padding-bottom: 10px;
+}
+main.bs-masthead.pricing.register .form-complete {
+	padding-bottom: 30px;
+	padding-top: 15px;
+	border-top: 1px solid rgb(231, 231, 231);
+}
+main.bs-masthead.pricing.register .form-complete .terms {
+	margin-bottom: 10px;
+}
+main.bs-masthead.pricing.register form#new_user .form-group.country {
+	margin-bottom: 5px;
+}
+main.bs-masthead.pricing.register form#new_user .form-group.country .form-control {
+	margin-bottom: 10px;
+}
+main.bs-masthead.pricing.register form#new_user .form-group.state .form-control {
+	margin-bottom: 0px;
+}
+main.bs-masthead.pricing.register form#new_user input#user_password {
+	margin-top: 25px;
+}
+main.bs-masthead.pricing.register .plan.register form#new_user .form-group {
+	margin-bottom: 10px;
+}
+main.bs-masthead.pricing.register .plan.register form#new_user .form-group span.help-inline {
+	position: relative;
+	top: -10px;
+	color: rgb(224, 102, 102);
+}
+main.bs-masthead.pricing.register .form-group label {
+	margin-bottom: 10px;
+	float: left;
+}
+main.bs-masthead.pricing.register form#new_user .btn {
+	float: none;
 }

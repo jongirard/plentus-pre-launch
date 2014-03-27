@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=1150, minimum-scale=0.9, user-scalable=0" />
 <%= favicon_link_tag %>
 <%= stylesheet_link_tag "authorized/authorized_application", media: "all", "data-turbolinks-track" => true %>
+<%= include_gon %>
 <%= javascript_include_tag "authorized/authorized_application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 </head>
@@ -21,8 +22,8 @@
 			<div class="panel-border-light">
 		            <ul class="nav">
 		              <li><%= link_to_unless_current("<i class=\"glyphicon glyphicon-dashboard\"></i>Dashboard".html_safe, finances_path, ) { link_to("<i class=\"glyphicon glyphicon-dashboard\"></i>Dashboard".html_safe, finances_path, class: "active") } %></li>
-		              <li><a href="#"><i class="glyphicon glyphicon-stats"></i>Year Trend</a></li>
-		              <li><a href="#"><i class="glyphicon glyphicon-usd"></i>Budget Goals</a></li>
+		              <li><%= link_to("<i class=\"glyphicon glyphicon-stats\"></i>Year Trend".html_safe, index_trends_path, class: cp(index_trends_path)) %></li>
+		              <li><%= link_to("<i class=\"glyphicon glyphicon-usd\"></i>Budget Goals".html_safe, index_expense_path, class: cp(index_expense_path)) %></li>
 		              <li><%= link_to("<i class=\"glyphicons glyphicons bank\"></i>Debt Manager".html_safe, index_debt_path, class: cp(index_debt_path)) %></li>
 		 			<% if current_user.country_id == 1039 %>
 					  <li><%= link_to("<i class=\"glyphicons glyphicons calculator\"></i>Tax Calculator".html_safe, show_tax_path(current_user.tax), class: cp(show_tax_path(current_user.tax))) %></li>
@@ -51,7 +52,7 @@
 				<% end %>
 			</div>
 			<div class="main-bar"><div class="crumbs"><ul><%= content_for?(:feature) ?  yield(:feature) : "<li>Plentus</li>".html_safe %></ul></div></div>
-		        <div class="main-panel">
+		        <div class="main-panel <%= content_for?(:class) ?  yield(:class) : "" %>">
 			<%= yield %>
 
 				</div>
