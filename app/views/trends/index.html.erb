@@ -1,3 +1,4 @@
+<%= include_gon %>
 <% provide(:title, 'Plentus - Budget Goals') %>
 <% provide(:class, 'trends') %>
 <% content_for :feature do %>
@@ -24,7 +25,7 @@
 			<div class="report-center dual">
 				<% @expenses_by_month.each do |month, expenses| %>	
 			<div class="approximate green">
-			<%= link_to "#{month.strftime('%B')}", month_trends_path(:year => month.year, :month => month.month.to_s.rjust(2,"0")) %> <span class="value"><%= @total %></span>
+			<%= link_to "#{month.strftime('%B')}", month_trends_path(:year => month.year, :month => month.month.to_s.rjust(2,"0")) %> <span class="value">$<%= number_with_delimiter(@total) %></span>
 			</div>
 			<% end %>
 			</div>

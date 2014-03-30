@@ -7,7 +7,7 @@ class TrendsController < ApplicationController
     @expenses_by_month = @expenses.group_by { |expense| expense.created_at.beginning_of_month }
     @total = @expenses.sum(:amount)
     
-    gon.expenses = @expenses.select("expense_type").where.not(expense_type: "").group(:expense_type).count.to_a
+    gon.expenses = @expenses.select("expense_type").where.not(expense_type: "").group(:expense_type).sum(:amount).to_a
   end
   
   def month
