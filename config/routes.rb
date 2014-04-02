@@ -13,12 +13,12 @@ PlentusPreLaunch::Application.routes.draw do
       get "finances/deductions" => "deductions#new", :as => :new_deduction
       get "finances/deductions/:id" => "deductions#show", :as => :show_deduction
       get "finances/deductions/:id/edit" => "deductions#edit", :as => :edit_deduction
-      resources :debts, only: [:create, :update]
+      resources :debts, only: [:create, :update, :destroy]
       get "finances/debts/new" => "debts#new", :as => :new_debt
       get "finances/debts/" => "debts#index", :as => :index_debt
       get "finances/debts/:id/" => "debts#show", :as => :show_debt
       get "finances/debts/:id/edit" => "debts#edit", :as => :edit_debt
-      resources :expenses, only: [:create]
+      resources :expenses, only: [:create, :destroy]
       get "finances/expenses/new" => "expenses#new", :as => :new_expense
       get "finances/expenses/" => "expenses#index", :as => :index_expense
       get "finances/trends/" => "trends#index", :as => :index_trends

@@ -1,0 +1,3 @@
+$('#total').html('$<%= number_with_delimiter(@expense.total_value) %>');
+$('#surplus').html('$<%= number_with_delimiter((current_user.income / 12) - @expense.total_value) %>')
+$('.approximate.<%= @expense.id %>').remove();

@@ -38,6 +38,13 @@ class DebtsController < ApplicationController
       redirect_to :index_debt
   end
   
+  def destroy
+    @debt = Debt.find(params[:id])
+    authorize @debt
+    @debt.destroy
+    redirect_to index_debt_path
+  end
+  
   private
   
   def require_record

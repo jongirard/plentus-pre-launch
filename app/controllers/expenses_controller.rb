@@ -21,12 +21,19 @@ class ExpensesController < ApplicationController
   end
   
   def destroy
+    @expense = Expense.find(params[:id])
+    authorize @expense
+    @expense.destroy
+    respond_to do |format|
+      format.html { redirect_to index_expense_path }
+      format.js
+    end
   end
   
   private
   
   def secure_params
-    params.required(:expense).permit(:name, :amount, :expense_type)
+    params.required(:expense).permit(:name, :flexible_amount, :expense_type)
   end
   
   private

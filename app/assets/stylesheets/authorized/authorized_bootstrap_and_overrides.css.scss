@@ -1,4 +1,3 @@
-@import "twitter/bootstrap";
 .application-frame {
 margin-left: auto;
 margin-right: auto;
@@ -259,8 +258,7 @@ right: 25px;
 text-align: right;
 }
 ul.nav.nav-pills.username ul.dropdown-menu {
-left: -10px;
-position: relative;
+left: -20px;
 text-align: left;
 float: right;
 }
@@ -324,8 +322,9 @@ width: 288px;
 background-color: transparent;
 border-left: 1px solid #D9DEEA;
 padding-left: 1px;
-position: absolute;
+position: relative;
 right: 0;
+float: right;
 z-index: 500;
 }
 .panel-right-inner {
@@ -375,6 +374,9 @@ margin-left: auto;
 margin-right: auto;
 border-radius: 5px;
 }
+.panel-button.small .outer-shadow.delete {
+right: 20px;
+}
 .panel-button .btn.btn-solid.features i.fa {
 float: right;
 top: 3px;
@@ -415,15 +417,10 @@ padding-top: 13px;
 .btn.taxes {
 color: #F4F7FF;
 border-radius: 5px;
-background-color: #6567A3;
-border: 2px solid #6567A3;
 width: 256px;
 height: 52px;
 font-size: 16px;
 outline: none;
-}
-.btn.taxes:hover {
-background-color: #6B6EA5;
 }
 .panel-content .tips {
 	font-size: 15px;
@@ -712,6 +709,7 @@ width: 80px;
 height: 40px;
 float: right !important;
 }
+
 .approximate .panel-button .btn.btn-solid.features {
 width: 80px;
 height: 40px;
@@ -735,6 +733,42 @@ padding-top: 10px;
 .value .fa-cog {
 	padding-left: 7px;
 	color: #9399AC;
+}
+.main-panel .btn-group.callback {
+	float:right;
+	top: -50px;
+	right: 40px;
+}
+.btn-group.callback > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+	border-radius: 4px;
+}
+.main-panel .btn-group.callback li.dropdown {
+	list-style-type: none;
+}
+.main-panel.expenses .btn-group.callback .open > .dropdown-menu {
+	width: 400px;
+	height: 305px;
+	background-color: rgb(240, 244, 253);
+}
+.main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense {
+	width: 370px;
+	padding-top: 20px;
+}
+.main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense input#expense_flexible_amount, .main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense input#expense_name, .main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense input.btn {
+	height: 40px;
+}
+.main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense .row.top {
+	padding-top: 10px;
+}
+.main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense .row.bottom {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense .row span.radio-holder {
+	background-color: #DAE5F1;
+	padding: 10px;
+	border-radius: 5px;
+	margin-right: 3px;
 }
 .main-panel.expenses form#new_expense {
 	width: 1060px;

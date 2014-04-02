@@ -42,5 +42,5 @@ PlentusPreLaunch::Application.configure do
     Bullet.enable = true
     Bullet.alert = true
   end
-  Devise::Async.enabled = true
+  Devise::Async.enabled = false
 end

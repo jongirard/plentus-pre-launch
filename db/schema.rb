@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140319035859) do
     t.string   "name"
     t.integer  "amount"
     t.string   "expense_type"
+    t.boolean  "recurring_expense", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

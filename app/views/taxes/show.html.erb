@@ -9,7 +9,7 @@
 				<div class="inset"><div class="outer-border"><div class="inner-inset">Income:<span class="value"> $<%= number_with_delimiter(@tax.income) %></span></div></div></div>
 				<div class="inset"><div class="outer-border"><div class="inner-inset">Taxes: <span class="value">$<%= number_with_delimiter(@tax.taxes) %></span></div></div></div>
 				<div class="inset"><div class="outer-border"><div class="inner-inset">RRSP: <span class="value">$<%= number_with_delimiter(@tax.rrsp) %></span></div></div></div>
-				<%= link_to "Update Taxes", edit_tax_path(@tax), class: "btn btn-solid btn-lg taxes" %>
+				<%= link_to "Update Taxes", edit_tax_path(@tax), class: "btn btn-success btn-lg taxes" %>
 				<div class="tips">
 					Tax Saving Tip: Increasing your Registered Retirement Savings Plan (RRSP) contribution will decrease taxable income and reduce total tax payable.
 				</div>

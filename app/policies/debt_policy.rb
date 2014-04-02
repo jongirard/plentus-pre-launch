@@ -21,4 +21,8 @@ class DebtPolicy < ApplicationPolicy
   def update?
     owned
   end
+  
+  def destroy?
+    owned
+  end
 end

@@ -14,8 +14,8 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require twitter/bootstrap/button
-//= require twitter/bootstrap/alert
-//= require twitter/bootstrap/dropdown
+//= require bootstrap/button
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //= require animations
 //= require region_select

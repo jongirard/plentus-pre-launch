@@ -2,6 +2,12 @@
 <% content_for :feature do %>
 <li>Debt Manager</li>
 <% end %>
+<div class="btn-group callback">
+<%= link_to "New Debt", new_debt_path, id: "new_link", class: "btn btn-success" %>
+  <ul class="dropdown-menu dropdown-menu-right expenses">
+
+  </ul>
+</div>
 <div class="content">
 	<% @debts.each do |debt| %>
 	<div class="row wide report">
@@ -21,7 +27,6 @@
 	</div>	
 	</div>
 <% end %>
-<div class="new center-block"><%= link_to "Add Another Debt", new_debt_path %></div>
 	
 	
 </div>

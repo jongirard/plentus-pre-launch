@@ -10,18 +10,20 @@
 <div class="row dual report">
 
 			<div class="col-xs-12">
-				<% @expenses_by_month.each do |month, expenses| %>
-			<div class="heading"><%= month.strftime('%B') %></div>			
-			<div class="report-outer">
-			<div class="report-center dual">
-				<% for expense in expenses %>	
-			<div class="approximate green">
-			<%= expense.name %><span class="value">$<%= number_with_delimiter(expense.amount) %></span>
-			</div>
-			<% end %>
-			<% end %>
-			</div>
-			</div>
+				<div class="heading">Expenses:</div>			
+				<div class="report-outer">
+				<div class="report-center dual">
+<% @expenses.each do |recurring| %>
+				<div class="approximate">
+				<%= recurring.name %><span class="value">$<%= number_with_delimiter(recurring.amount) %></span>
+				</div>
+				<% end %>
+				<div class="approximate green">
+				Total Expenses: <span class="value">$<%= number_with_delimiter(@recurring_total) %></span>
+				</div>
+				</div>
+				</div>
+				
 			</div>
 
 </div>

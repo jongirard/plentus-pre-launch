@@ -2,6 +2,12 @@
 <% content_for :feature do %>
 <li><%= link_to "Debt Manager", index_debt_path %></li><li><%= @debt.name? ? @debt.name : "Detailed Report" %></li>
 <% end %>
+<div class="btn-group callback">
+<%= link_to "New Debt", new_debt_path, id: "new_link", class: "btn btn-success" %>
+  <ul class="dropdown-menu dropdown-menu-right expenses">
+
+  </ul>
+</div>
 
 		<div class="content debt">
 
@@ -50,7 +56,7 @@
 <div class="row dual report lower">
 			<div class="lower-well-outer">
 				<div class="lower-well">
-					<div class="panel-button small"><div class="outer-shadow"><%= link_to "Update", edit_debt_path(@debt), class: "btn btn-solid btn-lg features" %></div></div>
+					<div class="panel-button small"><div class="outer-shadow"><%= link_to "Update", edit_debt_path(@debt), class: "btn btn-solid btn-lg features" %></div></div><div class="panel-button small"><div class="outer-shadow delete"><%= link_to 'Delete', @debt, method: :delete, data: { confirm: 'Delete this debt?' }, class: "btn btn-solid btn-lg features" %></div></div>
 				</div>
 				</div>
 			</div>

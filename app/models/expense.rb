@@ -3,6 +3,14 @@ class Expense < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :amount
   
+  def flexible_amount
+    amount
+  end
+  
+  def flexible_amount=(amount)
+    self.amount = amount.tr('$ ,', '') unless amount.blank?
+  end
+
 def self.total_value
   Expense.sum(:amount)
 end

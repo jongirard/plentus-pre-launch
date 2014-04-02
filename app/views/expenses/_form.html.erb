@@ -1,20 +1,26 @@
 <%= simple_form_for @expense, remote: true do |f| %>
 				<form role="form">
 					<div class="form-group">
-					<%= f.input :name, label: 'Name of expense' %>
+					<%= f.input :name, :label => false, placeholder: 'Expense Name' %>
 					</div>
 				  <div class="form-group">
-				<%= f.input :amount, label: 'expense amount' %>
+				<%= f.input :flexible_amount, :label => false, placeholder: 'Expense Amount' %>
 				</div>
-				<%= f.radio_button(:expense_type, "utilities") %>
-				<%= label_tag(:expense_type_utlities, "Utilities") %>
-				<%= f.radio_button(:expense_type, "rent") %>
-				<%= label_tag(:expense_type_rent, "Rent") %>
-				<%= f.radio_button(:expense_type, "groceries") %>
-				<%= label_tag(:expense_type_groceries, "Groceries") %>
-				<%= f.radio_button(:expense_type, "vehicle") %>
-				<%= label_tag(:expense_type_vehicles, "Vehicle") %>
-				<%= f.radio_button(:expense_type, "entertainment") %>
-				<%= label_tag(:expense_type_vehicles, "Entertainment") %>
-				<%= f.submit "Submit", :class => "btn btn-submit"%>
+				<div class="row top">
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "utilities") %>
+				<%= label_tag(:expense_type_utlities, "Utilities") %></span>
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "rent") %>
+				<%= label_tag(:expense_type_rent, "Rent") %></span>
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "groceries") %>
+				<%= label_tag(:expense_type_groceries, "Groceries") %></span>
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "vehicle") %>
+				<%= label_tag(:expense_type_vehicles, "Vehicle") %></span>
+				</div>
+				<div class="row bottom">
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "entertainment") %>
+				<%= label_tag(:expense_type_entertainment, "Entertainment") %></span>
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "other") %>
+				<%= label_tag(:expense_type_other, "Other") %></span>
+				</div>
+				<%= f.submit "Add Expense", :class => "btn btn-block btn-success"%>
 				<% end %>

@@ -14,10 +14,10 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require twitter/bootstrap/button
-//= require twitter/bootstrap/alert
-//= require twitter/bootstrap/dropdown
-//= require twitter/bootstrap/transition
-//= require twitter/bootstrap/collapse
+//= require bootstrap/button
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap/transition
+//= require bootstrap/collapse
 //= require highcharts
 //= require_tree .

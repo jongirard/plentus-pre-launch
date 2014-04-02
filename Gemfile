@@ -11,7 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-turbolinks'
  # learn-rails
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.1.1'
 gem 'figaro'
 gem 'gibbon'
 gem 'high_voltage'
