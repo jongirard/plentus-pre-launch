@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController 
   layout "authorized_application"
+  before_filter :authenticate_user!
   before_filter :require_income, :only => :index
   
   def new
@@ -18,6 +19,7 @@ class ExpensesController < ApplicationController
   
   def index
     @expenses = current_user.expenses
+    @total_value = @expenses.sum(:amount)
   end
   
   def destroy

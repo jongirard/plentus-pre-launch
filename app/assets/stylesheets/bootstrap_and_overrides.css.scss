@@ -249,9 +249,9 @@ margin-top: 17px;
 padding: 16px;
 border-radius: 13px;
 border: 1px solid #EAEAEA;
--moz-box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.01);
--webkit-box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.01);
-box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.01);
+-moz-box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.02);
+-webkit-box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.02);
+box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.02);
 }
 
 .container.secondary {
@@ -316,21 +316,21 @@ font-weight: normal;
 color: #959EB5;
 float: left;
 }
-main.bs-secondaryhead .forgot-password-container {
-position: absolute;
-top: 187px;
-right: 30px;
+main.bs-secondaryhead .forgot-password-signup-container {
+position: relative;
+top: 20px;
+color: #696969;
 }
-main.bs-secondaryhead .forgot-password-container a.forgot {
+main.bs-secondaryhead .forgot-password-signup-container a.forgot {
 color: #7274A3;
 }
-main.bs-secondaryhead .forgot-password-container a.forgot:hover {
+main.bs-secondaryhead .forgot-password-signup-container a.forgot:hover {
 color: #4D4A53;
 text-decoration: none;
 }
 main.bs-secondaryhead .note {
 font-size: 20px;
-font-weight: normal;
+font-weight: 500;
 color: #8B8DAF;
 padding-top: 10px;
 }

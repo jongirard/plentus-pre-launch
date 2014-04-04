@@ -186,6 +186,9 @@ padding-top: 30px;
 margin-left: 239px;
 position: relative;
 }
+.main-panel .content form.feature-form {
+width: 1000px;
+}
 .main-bar {
 height: 63px;
 background-color: #F5F7FA;
@@ -483,6 +486,10 @@ background-color: #DEE8F2;
 .report-center .approximate.total span.total {
 color: #6567A3;
 }
+.report-center .empty {
+	text-align: center;
+	padding-top: 40px;
+}
 .row.dual.report {
 left: auto;
 width: 1100px;
@@ -623,6 +630,11 @@ text-decoration: none;
 .content.dashboard .description {
 	width: 900px;
 	text-align:center;
+	color: #4E566D;
+}
+.content.dashboard .description h1 {
+font-size: 30px;
+color: #3E465C;
 }
 .content.deductions .panel-button .btn.btn-solid.features, .content.debt .panel-button .btn.btn-solid.features {
 	font-size: 15px;
@@ -695,6 +707,31 @@ text-decoration: none;
 	right: 130px;
 	float: right;
 }
+.main-panel.deduction.edit .approximate {
+	min-height: 40px;
+	padding-top: 8px;
+}
+.main-panel.deduction.edit .approximate span.heading {
+	padding-left: 15px;
+}
+.main-panel.deduction.edit .approximate a.add {
+	color: #5cb85c;
+	float: right;
+	right: 20px;
+	position: relative;
+	width: 700px;
+	text-align: right;
+	height: 30px;
+}
+.main-panel.deduction.edit .panel-collapse {
+	clear: both;
+}
+.main-panel.deduction.edit .panel-group .panel {
+	background-color: #F7FAFF;
+}
+.main-panel.deduction.edit #accordion input.btn-success {
+margin-top: 15px;
+}
 .approximate .panel-button {
 	float: right;
 	clear: both;
@@ -746,12 +783,13 @@ padding-top: 10px;
 	list-style-type: none;
 }
 .main-panel.expenses .btn-group.callback .open > .dropdown-menu {
-	width: 400px;
+	width: 420px;
 	height: 305px;
 	background-color: rgb(240, 244, 253);
 }
 .main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense {
-	width: 370px;
+	width: 385px;
+	height: 230px;
 	padding-top: 20px;
 }
 .main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense input#expense_flexible_amount, .main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense input#expense_name, .main-panel.expenses .btn-group.callback li.dropdown.open ul.dropdown-menu form#new_expense input.btn {
@@ -866,13 +904,13 @@ main.bs-application.account .account-cancel, main.bs-application.account .panel-
 	color: gray;
 	font-weight: normal;
 }
-main.bs-application.account .panel-button.small .btn.btn-solid.features:hover {
+main.bs-application.account .account-cancel .panel-button.small .btn.btn-solid.features:hover {
 	color: #B94C4C;
 }
 main.bs-application.account form#edit_user .lower-well {
 	margin-top: 20px;
 }
-main.bs-application.account form#edit_user .lower-well .btn.btn-solid.features, main.bs-application.account form#new_user .lower-well .btn.btn-solid.features {
+main.bs-application.account form#edit_user .lower-well .btn.btn-solid.features, main.bs-application.account form.edit_user .lower-well .btn.btn-solid.features {
 	color: #7B94C0;
 	font-weight: 500;
 	padding-top: 8px;

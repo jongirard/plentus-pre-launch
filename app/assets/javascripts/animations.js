@@ -23,6 +23,11 @@ $(window).bind('scroll',function(){
     parallaxScroll();
 
 });
+
+window.setTimeout((function() {
+      $(".alert").alert("close");
+      return $("span.help-inline").addClass('fade');
+    }), 5500);
  
 function parallaxScroll(){
 	var scrolled = $(window).scrollTop();

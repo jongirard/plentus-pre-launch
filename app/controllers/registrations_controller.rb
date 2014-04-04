@@ -31,10 +31,6 @@ class RegistrationsController < Devise::RegistrationsController
     
     def billing
     end
-    
-    def personal
-      @user = current_user
-    end
   
   protected
   

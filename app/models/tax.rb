@@ -19,7 +19,6 @@ before_save :default_values
     end 
 end
 
-
 def taxable_income 
   calculation = self.income - self.rrsp
   return calculation

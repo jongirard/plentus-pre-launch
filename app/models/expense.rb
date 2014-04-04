@@ -12,11 +12,7 @@ class Expense < ActiveRecord::Base
   end
 
 def self.total_value
-  Expense.sum(:amount)
-end
-
-def total_value
-  Expense.sum(:amount)
+    sum(:amount)
 end
 
 end

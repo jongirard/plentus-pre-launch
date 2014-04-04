@@ -3,13 +3,13 @@
 	<div class="container secondary">
 	<div class="row">
 	<div class="col-xs-12">
-		<div class="logo logo-inset"></div>
+		<%= link_to "<div class=\"logo logo-inset\"></div>".html_safe, root_path, class: "logo logo-inset" %>
 		<div class="outer-box-transparent">
 			<div class="inner-box">
+				<div class="note">Update your Password</div>
+				<div class="note-sub"></div>
 
 <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-<div class="note">Update your Password</div>
-<div class="note-sub"></div>
   <%= f.error_notification %>
   <%= f.input :reset_password_token, :as => :hidden %>
 

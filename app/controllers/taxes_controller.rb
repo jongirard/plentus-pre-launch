@@ -7,6 +7,7 @@ class TaxesController < ApplicationController
   
   def new
     @tax = Tax.new
+    gon.income = current_user.income
   end
   
   def edit

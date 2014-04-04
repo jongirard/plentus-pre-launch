@@ -3,7 +3,7 @@
 	<div class="container secondary">
 	<div class="row">
 	<div class="col-xs-12">
-		<div class="logo logo-inset"></div>
+			<%= link_to "<div class=\"logo logo-inset\"></div>".html_safe, root_path, class: "logo logo-inset" %>
 		<div class="outer-box-transparent">
 			
 				<div class="note">Log in to Plentus</div>
@@ -16,12 +16,12 @@
 	<div class="form-group">
 	<%= f.input :password, :label => false, placeholder: 'Password' %>
 	</div>
-	<div class="forgot-password-container">
-	<%= link_to "Forgot?", forgot_password_path, class: "forgot" %>
-	</div>
 	<%= f.submit "Login!", :class => "btn btn-solid btn-lg"%>
 	</form>
 <% end %>
+</div>
+<div class="forgot-password-signup-container">
+<span class="link"><%= link_to "Forgot your password", forgot_password_path, class: "forgot" %></span> or need to <span class="link"><%= link_to "Sign Up for a plan", page_path('plans'), class: "forgot" %></span>
 </div>
 
 </div>

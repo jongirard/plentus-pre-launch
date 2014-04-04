@@ -31,8 +31,10 @@ PlentusPreLaunch::Application.routes.draw do
     post 'login' => 'devise/sessions#create', :as => :user_session
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
     get "/passwordreset/new" => "devise/passwords#new", :as => :forgot_password
+    get "/confirmation/new" => "devise/confirmations#new", :as => :new_confirmation
     get "users/billing" => "registrations#billing", :as => :user_billing
-    get "users/personal" => "registrations#personal", :as => :user_personal
+    get "users/account" => "accounts#edit", :as => :user_personal
+    patch "users/account" => "accounts#update"
   end
   #get 'register', to: 'users#new', as: 'registration'
 end

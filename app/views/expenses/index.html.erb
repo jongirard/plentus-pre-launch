@@ -17,9 +17,15 @@
 <div class="heading">Recurring Monthly Expenses:</div>			
 <div class="report-outer">
 <div class="report-center dual left" id="recurring_expenses">
+	<% if @expenses.blank? %>
+	
+	<div class="empty"><%= link_to "Add Expense", new_expense_path, id: "first_expense", remote: true, class: "target", data: { target: "dropdown-toggle" } %></div>
+	
+	<% else %>
 	<% @expenses.each do |expense| %>
 	<div class="approximate <%= expense.id %>"><%= expense.name %> <span class="value">$<%= number_with_delimiter(expense.amount) %></span><%= link_to "(remove)", expense, method: :delete, remote: true %></div>
 			
+<% end %>
 <% end %>
 </div>
 </div>	
@@ -32,10 +38,10 @@
 			Monthly Income: <span class="value"><% unless current_user.income.blank? %>$<%= number_with_delimiter(current_user.income / 12) %><% else %>$0<% end %><%= link_to user_personal_path, id: "cog" do %><i class="fa fa-cog"></i><% end %></span>
 			</div>
 			<div class="approximate lower green">
-			Monthly Expenses Total:<span class="value" id="total">$<%= number_with_delimiter(@expenses.total_value) %></span>	
+			Monthly Expenses Total:<span class="value" id="total">$<%= number_with_delimiter(@total_value) %></span>	
 			</div>
 			<div class="approximate green">
-			Total Surplus or Deficit:<span class="value" id="surplus"><% unless current_user.income.blank? %>$<%= number_with_delimiter((current_user.income / 12) - @expenses.total_value) %><% else %>$0<% end %></span>	
+			Total Surplus or Deficit:<span class="value" id="surplus"><% unless current_user.income.blank? %>$<%= number_with_delimiter((current_user.income / 12) - @total_value) %><% else %>$0<% end %></span>	
 			</div>
 			</div>
 			</div>

@@ -41,7 +41,7 @@ class Debt < ActiveRecord::Base
   end
   
   def budgeted_duration
-    calculation = nper(self.monthly_interest / 100, self.budget_monthly, self.present_balance, self.future_value)
+    calculation = nper(self.monthly_interest / 100, self.budget_monthly, self.present_balance, 0)
   end
 
 end
