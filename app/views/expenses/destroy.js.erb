@@ -1,6 +1,3 @@
 $('#total').html('$<%= number_with_delimiter(current_user.expenses.total_value) %>');
 $('#surplus').html('$<%= number_with_delimiter((current_user.income / 12) - current_user.expenses.total_value) %>')
 $('.approximate.<%= @expense.id %>').remove();
-<% if @expenses.blank? %>
-$('.empty').show();
-<% end %>

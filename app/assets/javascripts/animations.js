@@ -26,7 +26,7 @@ $(window).bind('scroll',function(){
 
 window.setTimeout((function() {
       $(".alert").alert("close");
-      return $("span.help-inline").addClass('fade');
+      return $(".bs-secondaryhead span.help-inline").addClass('fade');
     }), 5500);
  
 function parallaxScroll(){

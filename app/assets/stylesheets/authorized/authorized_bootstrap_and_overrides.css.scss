@@ -829,6 +829,9 @@ line-height: 35px;
 .bs-application .main-panel.expenses .report {
 	top: 0px;
 }
+.bs-application .main-panel.expenses .report .col-xs-6.right .report-outer {
+	margin-top: -4px;
+}
 .main-panel.expenses .row.dual.report .report-center.dual {
 	width: 100%;
 }

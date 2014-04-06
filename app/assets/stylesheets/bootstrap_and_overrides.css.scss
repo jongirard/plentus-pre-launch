@@ -129,6 +129,9 @@ color: #7274A3;
 text-align: left;
 padding-bottom: 10px;
 }
+.footer span.terms a {
+	color: #D1D9E5;
+}
 .footer ul.footer-lists {
 text-align: left;
 padding: 0px;
@@ -944,4 +947,34 @@ main.bs-masthead.pricing.register .form-group label {
 }
 main.bs-masthead.pricing.register form#new_user .btn {
 	float: none;
+}
+main.bs-masthead.pricing.register span.terms a {
+	color: #837DB1;
+}
+main.bs-masthead.pricing.register span.terms a:hover {
+	color: #6F6B92;
+}
+main.bs-masthead.pricing.register.terms {
+	font-family: proxima_nova_rgregular, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 26px;
+}
+main.bs-masthead.pricing.register.terms .row .terms {
+	width: 800px;
+	text-align: left;
+	color: #777777;
+	margin-bottom: 150px;
+}
+main.bs-masthead.pricing.register.terms .row .terms h1 {
+	padding: 0px;
+	margin-left: -2px;
+}
+main.bs-masthead.pricing.register.terms .row .terms h2 {
+	color: #6F6B92;
+}
+main.bs-masthead.pricing.register.terms .row .terms span.darker {
+	color: #000000;
+}
+main.bs-masthead.pricing.register.terms .row .terms ul li {
+	list-style-type: decimal;
 }

@@ -37,7 +37,7 @@
 			</div>
 			</div>
 			<div class="form-complete">
-				<div class="terms">By clicking the button below you agree to the Terms of Service</div>
+				<div class="terms">By clicking the button below you agree to the <span class="terms"><%= link_to "Terms of Service", page_path('terms') %></span></div>
 			<%= f.submit "SIGN UP FOR #{@plan.upcase} TODAY", :class => "btn btn-solid btn-lg"%>
 			</div>
 			<% end %>

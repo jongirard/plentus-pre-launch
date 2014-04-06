@@ -1,6 +1,7 @@
 class TrendsController < ApplicationController
   layout "authorized_application"
   before_filter :authenticate_user!
+  before_filter :require_record, :only => :index
   
   def index
     @expenses = current_user.expenses
@@ -24,6 +25,17 @@ class TrendsController < ApplicationController
     redirect_to index_trends_path
   end
  
+end
+
+private
+
+def require_record
+  if Expense.where(:user_id => current_user.id).exists?
+    
+  else
+    redirect_to index_expense_path
+    flash[:notice] = "You must first add an expense before viewing Year Trend."
+  end
 end
 
   
