@@ -2,8 +2,9 @@
 
 FactoryGirl.define do
   factory :tax do
-    income ""
-    taxes ""
+    income 15000
+    taxes 50
     rrsp 1
+    user
   end
 end

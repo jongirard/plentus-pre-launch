@@ -3,10 +3,10 @@
 FactoryGirl.define do
   factory :debt do
     interest_annual "9.99"
-    interest_monthly "9.99"
-    duration 1
-    present_balance 1
-    future_value 1
-    budget_monthly 1
+    duration 5
+    present_balance 500
+    future_value 0
+    budget_monthly 50
+    user
   end
 end

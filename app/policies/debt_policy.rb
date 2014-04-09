@@ -1,13 +1,7 @@
 class DebtPolicy < ApplicationPolicy
-  attr_reader :user, :debt
-  
-  def initialize(user, debt)
-    @user = user
-    @debt = debt
-  end
-  
+
   def owned
-      debt.user_id == user.id
+      user == record.user
   end
   
   def index?

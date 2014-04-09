@@ -1,13 +1,7 @@
 class ExpensePolicy < ApplicationPolicy
-  attr_reader :user, :expense
-  
-  def initialize(user, expense)
-    @user = user
-    @expense = expense
-  end
   
   def owned
-      expense.user_id == user.id
+      user == record.user
   end
   
   def index?

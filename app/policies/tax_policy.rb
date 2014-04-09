@@ -1,13 +1,7 @@
 class TaxPolicy < ApplicationPolicy
-  attr_reader :user, :tax
-  
-  def initialize(user, tax)
-    @user = user
-    @tax = tax
-  end
   
   def owned
-      tax.user_id == user.id
+    user == record.user
   end
   
   def show?

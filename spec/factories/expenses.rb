@@ -5,6 +5,6 @@ FactoryGirl.define do
     name "MyString"
     amount 1
     expense_date "2014-03-09"
-    repeat false
+    expense_type ""
   end
 end

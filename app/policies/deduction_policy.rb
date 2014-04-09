@@ -1,13 +1,7 @@
 class DeductionPolicy < ApplicationPolicy
-  attr_reader :user, :deduction
-  
-  def initialize(user, deduction)
-    @user = user
-    @deduction = deduction
-  end
-  
+
   def owned
-      deduction.user_id == user.id
+    user == record.user
   end
   
   def show?
