@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
   belongs_to :country
   belongs_to :state
   has_one :tax, :dependent => :destroy

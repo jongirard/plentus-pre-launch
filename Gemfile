@@ -24,6 +24,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'pundit'
 gem 'gon'
 gem 'daemons'
+gem 'rolify'
 group :development, :test do
 gem 'sqlite3'
 #gem 'better_errors'

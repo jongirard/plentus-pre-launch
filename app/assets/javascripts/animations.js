@@ -27,7 +27,7 @@ $(window).bind('scroll',function(){
 window.setTimeout((function() {
       $(".alert").alert("close");
       return $(".bs-secondaryhead span.help-inline").addClass('fade');
-    }), 5500);
+    }), 8500);
  
 function parallaxScroll(){
 	var scrolled = $(window).scrollTop();

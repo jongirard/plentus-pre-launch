@@ -345,6 +345,9 @@ color: #8A8A8A;
 .alert {
 margin-bottom: 0px;
 }
+.alert #flash_alert, .alert #flash_error, .alert #flash_notice {
+text-align: center;
+}
 main.bs-secondaryhead form#new_user .btn, main.bs-secondaryhead form#edit_user .btn {
 font-size: 28px;
 font-family: proxima_nova_rgregular, Helvetica Neue, Helvetica, Arial, sans-serif;

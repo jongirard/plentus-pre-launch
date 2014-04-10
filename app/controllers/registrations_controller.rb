@@ -1,6 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
   before_filter :check_region, :only => :create
+  before_filter :check_param, :only => :create
   
   def new
     @plan = params[:plan]
@@ -9,6 +10,11 @@ class RegistrationsController < Devise::RegistrationsController
     else
       redirect_to page_path('plans')
     end
+  end
+  
+  def create
+    super
+    @user.add_role(params[:plan])
   end
   
   def update
@@ -37,12 +43,21 @@ class RegistrationsController < Devise::RegistrationsController
   def check_region
     @plan = params[:plan]
     if @plan == 'plus' && params[:user][:country_id] == '1228'
-      redirect_to register_path(:plan => 'core')
-      flash[:notice] = "Only the CORE plan is available in the region you selected, at this time."
+      redirect_to page_path('plans')
+      flash[:error] = "Only the CORE plan is available in the region you selected, at this time."
     else
       
     end
   end
+  
+  def check_param
+    @plan = params[:plan]
+    if @plan && ENV['PLANS'].include?(@plan)
+    else
+      redirect_to page_path('plans')
+      flash[:error] = "There was a problem creating your account. Please try again or <a href=\"mailto:support@goplentus.com\">Contact Support</a>."
+  end
+end
   
   def after_inactive_sign_up_path_for(resource)
       new_user_session_path

@@ -21,7 +21,17 @@ end
   it "is invalid with a duplicate email address" do
     user = FactoryGirl.create(:user)
     User.new(:fullname => 'Plentus User', :email => 'user.email', :password => '123456').should_not be_valid
+end
+it "should not approve incorrect roles" do
+  @user = FactoryGirl.create(:user)
+  @user.add_role :role
+  @user.has_role?(:admin).should be_false
+end
 
+it "should approve correct roles" do
+  @user = FactoryGirl.create(:user)
+  @user.add_role :role
+  @user.has_role?(:role).should be_true
 end
 
   it "should save when required fields are populated with valid data" do
