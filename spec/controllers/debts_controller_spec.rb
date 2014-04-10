@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TaxesController do
+describe DebtsController do
   
   context "Logged In User" do
   
@@ -13,6 +13,14 @@ describe TaxesController do
     end
   end
   
+  describe "GET 'index' with debts" do
+    it "returns http success" do
+      post :create, debt: FactoryGirl.attributes_for(:debt) 
+      get 'index'
+      response.should be_success
+    end
+  end
+  
   it "should have a current_user" do
       subject.current_user.should_not be_nil
     end
@@ -20,12 +28,12 @@ describe TaxesController do
     describe "POST create" do
     
     it "creates a new tax" do
-      expect { post :create, tax: FactoryGirl.attributes_for(:tax) }.to change(Tax,:count).by(1)
+      expect { post :create, debt: FactoryGirl.attributes_for(:debt) }.to change(Debt,:count).by(1)
     end
     
     it "redirects to the new tax" do 
-      post :create, tax: FactoryGirl.attributes_for(:tax) 
-      response.should redirect_to show_tax_path(Tax.last)
+      post :create, debt: FactoryGirl.attributes_for(:debt) 
+      response.should redirect_to show_debt_path(Debt.last)
     end 
   end
   

@@ -3,8 +3,8 @@
 FactoryGirl.define do
   factory :expense do
     name "MyString"
-    amount 1
-    expense_date "2014-03-09"
-    expense_type ""
+    flexible_amount "$25"
+    expense_type "Other"
+    user
   end
 end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TaxesController do
+describe DeductionsController do
   
   context "Logged In User" do
   
@@ -19,13 +19,13 @@ describe TaxesController do
     
     describe "POST create" do
     
-    it "creates a new tax" do
-      expect { post :create, tax: FactoryGirl.attributes_for(:tax) }.to change(Tax,:count).by(1)
+    it "creates a new deduction" do
+      expect { post :create, deduction: FactoryGirl.attributes_for(:deduction) }.to change(Deduction,:count).by(1)
     end
     
     it "redirects to the new tax" do 
-      post :create, tax: FactoryGirl.attributes_for(:tax) 
-      response.should redirect_to show_tax_path(Tax.last)
+      post :create, deduction: FactoryGirl.attributes_for(:deduction) 
+      response.should redirect_to show_deduction_path(Deduction.last)
     end 
   end
   

@@ -7,6 +7,8 @@ require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'database_cleaner'
 require 'pundit/rspec'
+include Warden::Test::Helpers
+Warden.test_mode!
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -48,6 +50,15 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
+  
+  config.before(:suite) do
+      Rails.application.load_seed
+  end
+  
+  config.after(:suite) do
+      DatabaseCleaner.clean_with(:truncation)
+    end
+
 end
 Capybara.asset_host = "http://localhost:3000"
 Capybara.javascript_driver = :poltergeist

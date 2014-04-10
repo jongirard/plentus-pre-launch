@@ -13,3 +13,20 @@ describe "Login Process" do
     
   end
 end
+
+describe "Logout Process" do
+  
+  it "redirects to login page on logout and displays a success notice", :js => true do
+    user = FactoryGirl.create(:user, fullname: 'Jon')
+    user.confirm!
+    visit new_user_session_path
+    fill_in "user_email", with: user.email
+    fill_in "user_password", with: user.password
+    click_button "Login"
+    click_link "Jon"
+    expect(page).to have_css('li.dropdown.open')
+    click_link("Logout")
+    current_path.should eq(new_user_session_path)
+    expect(page).to have_content("Signed out successfully")
+  end
+end
