@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   
   unless config.consider_all_requests_local
-  #rescue_from Exception, :with => :error_generic
-  #rescue_from ActionController::RoutingError, :with => :render_not_found
-  #rescue_from AccessDenied, :with => :render_not_found
+  rescue_from Exception, :with => :error_generic
+  rescue_from ActionController::RoutingError, :with => :render_not_found
+  rescue_from AccessDenied, :with => :render_not_found
   rescue_from ActionController::InvalidAuthenticityToken, :with => :render_already_signed_out
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   end
