@@ -64,6 +64,7 @@ namespace :deploy do
 end
 
 after "deploy", "figaro:setup", "figaro:finalize"
+after "deploy:cold", "deploy:seed"
 
 namespace :figaro do
   desc "SCP transfer figaro configuration to the shared folder"
