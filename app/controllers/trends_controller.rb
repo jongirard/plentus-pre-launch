@@ -14,7 +14,7 @@ class TrendsController < ApplicationController
   
   def month
     
-    @expenses = current_user.expenses.select("name, amount, id, created_at").where(["strftime('%Y', created_at) = ? AND strftime('%m', created_at) = ?", params[:year], params[:month] ])
+    @expenses = current_user.expenses.select("name, amount, id, created_at").where(['extract(year  from created_at) = ?', params[:year]).where('extract(month  from created_at) = ?', params[:month])
     
     unless @expenses.empty?
       
