@@ -12,6 +12,7 @@
  *= require authorized/authorized_bootstrap_and_overrides
  *= require authorized/glyphicons-regular
  *= require font-awesome
+ *= require_directory .
  */
 @import "bootstrap";
 @font-face {font-family: 'proxima_nova_rgregular';

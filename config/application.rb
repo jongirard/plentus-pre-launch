@@ -46,5 +46,6 @@ module PlentusPreLaunch
       Devise::PasswordsController.layout "nav_disabled"
       Devise::ConfirmationsController.layout "nav_disabled"
     end
+    config.assets.precompile += ['authorized/*']
   end
 end
