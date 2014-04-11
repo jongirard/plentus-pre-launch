@@ -1,0 +1,32 @@
+
+<% provide(:title, 'Plentus - Budget Goals') %>
+<% provide(:class, 'expenses') %>
+<% content_for :feature do %>
+<li><%= link_to "Year Trend", index_trends_path %></li><li>Monthly Report</li>
+<% end %>
+
+<div class="content expenses">
+
+<div class="row dual report">
+
+			<div class="col-xs-12">
+				<div class="heading">Expenses:</div>			
+				<div class="report-outer">
+				<div class="report-center dual">
+<% @expenses.each do |recurring| %>
+				<div class="approximate">
+				<%= recurring.name %><span class="value">$<%= number_with_delimiter(recurring.amount) %></span>
+				</div>
+				<% end %>
+				<div class="approximate green">
+				Total Expenses: <span class="value">$<%= number_with_delimiter(@recurring_total) %></span>
+				</div>
+				</div>
+				</div>
+				
+			</div>
+
+</div>
+</div>
+
+

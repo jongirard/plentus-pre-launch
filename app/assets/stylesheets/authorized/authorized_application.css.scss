@@ -1,0 +1,42 @@
+/*
+ * This is a manifest file that'll be compiled into authorized_application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require authorized/authorized_bootstrap_and_overrides
+ *= require authorized/glyphicons-regular
+ *= require font-awesome
+ */
+@import "bootstrap";
+@font-face {font-family: 'proxima_nova_rgregular';
+src: font-url("proximanovareg-webfont.eot"); src: font-url("proximanovareg-webfont.eot?#iefix") format('embedded-opentype'), font-url("proximanovareg-webfont.woff") format('woff'), font-url("proximanovareg-webfont.ttf") format('truetype');}
+
+html, body, main.bs-application {
+background-color: #EDF1FA;
+position: relative;
+height: 100%;
+min-height: 100%;
+background-size: 485px 485px;
+background-image: asset-url("bg_texture.png");
+background-repeat: repeat;
+}
+main.bs-application.account .application-frame {
+	margin-left: 239px;
+	min-width: 1050px;
+}
+main.bs-application.account .upper-handle {
+	min-width: 1050px;
+}
+main.bs-application.account .main-panel {
+	margin-left: 0px;
+}
+main.bs-application.account .main-panel .content {
+	width: 700px;
+	margin-left: auto;
+}

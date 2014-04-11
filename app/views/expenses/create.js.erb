@@ -1,0 +1,7 @@
+<% if @expenses.blank? %>
+$('.empty').hide();
+<% end %>
+$('li.dropdown').removeClass("open")
+$('#recurring_expenses').append('<div class="approximate <%= @expense.id %>"><%= @expense.name %> <span class="value">$<%= number_with_delimiter(@expense.amount) %></span><%= link_to "(remove)", @expense, method: :delete, remote: true %></div>');
+$('#total').html('$<%= number_with_delimiter(current_user.expenses.total_value) %>');
+$('#surplus').html('$<%= number_with_delimiter((current_user.income / 12) - current_user.expenses.total_value) %>')

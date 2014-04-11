@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= content_for?(:title) ?  yield(:title) : "Plentus - Dashboard" %></title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=1150, minimum-scale=0.9, user-scalable=0" />
+<%= favicon_link_tag %>
+<%= stylesheet_link_tag "authorized/authorized_application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "authorized/authorized_application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+	<main class="bs-application account" role="main">
+	<%= render 'layouts/messages' %>
+	<div class="container perimeter">
+		<div class="row row-offcanvas row-offcanvas-left">
+		        <!-- sidebar -->
+		        <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+			<div class="side-panel top"><div class="inner-border"><div class="logo"><%= link_to image_tag('plentus-symbol.png', :size => '32x36'), finances_path %></div></div></div>
+			<div class="feature-select"><div class="outer-shadow"><%= link_to "Back to Plentus", finances_path, class: "btn btn-solid btn-lg features" %></div></div>
+			<div class="panel-border-light">
+		            <ul class="nav">
+		<li><%= link_to_unless_current("<i class=\"fa fa-cogs\"></i>Account Settings".html_safe, edit_user_registration_path, ) { link_to("<i class=\"fa fa-cogs\"></i>Account Settings".html_safe, edit_user_registration_path, class: "active") } %></li>
+		<li><%= link_to_unless_current("<i class=\"fa fa-user\"></i>Personal Information".html_safe, user_personal_path, ) { link_to("<i class=\"fa fa-user\"></i>Personal Information".html_safe, user_personal_path, class: "active") } %></li>
+		<li><%= link_to_unless_current("<i class=\"glyphicon glyphicon-credit-card\"></i>Account Billing".html_safe, user_billing_path, ) { link_to("<i class=\"glyphicon glyphicon-credit-card\"></i>Account Billing".html_safe, user_billing_path, class: "active") } %></li>
+		            </ul>
+		        </div>
+		</div>
+
+		        <!-- main area -->
+		<div class="application-frame">
+			<div class="upper-handle">
+				<% if current_user %>
+				<ul class="nav nav-pills username">
+				  <li class="dropdown">
+				    <a class="dropdown-toggle username" data-toggle="dropdown" href="#">
+				       <%= current_user.fullname %><span class="caret"></span>
+				    </a>
+				    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+				<li class="account"><%= link_to("<i class=\"fa fa-cogs\"></i>Account Settings".html_safe, edit_user_registration_path) %></li>
+				     <li><%= link_to("<i class=\"fa fa-sign-out\"></i>Logout".html_safe, destroy_user_session_path, :method => :delete) %></li>
+				    </ul>
+				  </li>
+				</ul>
+				<% end %>
+			</div>
+			<div class="main-bar"><div class="crumbs"><ul><%= content_for?(:feature) ?  yield(:feature) : "Account" %></ul></div></div>
+		        <div class="main-panel">
+			<%= yield %>
+
+				</div>
+				<div class="lower-main"><%= content_for?(:lower_main) ?  yield(:lower_main) : "" %></div>
+		</div>
+	</div>
+	</div>	
+	</main>
+	</body>
+	</html>

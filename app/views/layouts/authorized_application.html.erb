@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= content_for?(:title) ?  yield(:title) : "Plentus - Dashboard" %></title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=1150, minimum-scale=0.9, user-scalable=0" />
+<%= favicon_link_tag %>
+<%= stylesheet_link_tag "authorized/authorized_application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "authorized/authorized_application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+	<main class="bs-application" role="main">
+	<%= render 'layouts/messages' %>
+	<div class="container perimeter">
+		<div class="row row-offcanvas row-offcanvas-left">
+		        <!-- sidebar -->
+		        <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+			<div class="side-panel top"><div class="inner-border"><div class="logo"><%= link_to image_tag('plentus-symbol.png', :size => '32x36'), finances_path %></div></div></div>
+			<div class="feature-select"><div class="outer-shadow"><button class="btn btn-solid btn-lg features">Finances<span class="caret"></span></button></div></div>
+			<div class="panel-border-light">
+		            <ul class="nav">
+		              <li><%= link_to_unless_current("<i class=\"glyphicon glyphicon-dashboard\"></i>Dashboard".html_safe, finances_path, ) { link_to("<i class=\"glyphicon glyphicon-dashboard\"></i>Dashboard".html_safe, finances_path, class: "active") } %></li>
+		              <li><%= link_to("<i class=\"glyphicon glyphicon-stats\"></i>Year Trend".html_safe, index_trends_path, class: cp(index_trends_path)) %></li>
+		              <li><%= link_to("<i class=\"glyphicon glyphicon-usd\"></i>Budget Goals".html_safe, index_expense_path, class: cp(index_expense_path)) %></li>
+		              <li><%= link_to("<i class=\"glyphicons glyphicons bank\"></i>Debt Manager".html_safe, index_debt_path, class: cp(index_debt_path)) %></li>
+		 			<% if current_user.country_id == 1039 %>
+					  <li><%= link_to("<i class=\"glyphicons glyphicons calculator\"></i>Tax Calculator".html_safe, show_tax_path(current_user.tax), class: cp(show_tax_path(current_user.tax))) %></li>
+					<% end %>
+					  <li><%= link_to("<i class=\"glyphicon glyphicon-paperclip\"></i>Deduction Details".html_safe, show_deduction_path(current_user.deduction), class: cp(show_deduction_path(current_user.deduction))) %></li>
+		            </ul>
+		        </div>
+		</div>
+
+		        <!-- main area -->
+		<div class="application-frame">
+			<div class="upper-handle">
+				<button type="button" class="toggle" data-toggle="offcanvas" data-target=".sidebar-nav"><i class="fa fa-bars"></i></button>
+				<% if current_user %>
+				<ul class="nav nav-pills username">
+				  <li class="dropdown">
+				    <a class="dropdown-toggle username" data-toggle="dropdown" href="#">
+				       <%= current_user.fullname %><span class="caret"></span>
+				    </a>
+				    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+					<li class="account"><%= link_to("<i class=\"fa fa-cogs\"></i>Account Settings".html_safe, edit_user_registration_path) %></li>
+				     <li><%= link_to("<i class=\"fa fa-sign-out\"></i>Logout".html_safe, destroy_user_session_path, :method => :delete) %></li>
+				    </ul>
+				  </li>
+				</ul>
+				<% end %>
+			</div>
+			<div class="main-bar"><div class="crumbs"><ul><%= content_for?(:feature) ?  yield(:feature) : "<li>Plentus</li>".html_safe %></ul></div></div>
+		        <div class="main-panel <%= content_for?(:class) ?  yield(:class) : "" %>">
+			<%= yield %>
+
+				</div>
+		</div>
+	</div>
+	</div>	
+	</main>
+	</body>
+	</html>

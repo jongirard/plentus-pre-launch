@@ -1,0 +1,32 @@
+<% provide(:title, 'Plentus - Debt Manager') %>
+<% content_for :feature do %>
+<li>Debt Manager</li>
+<% end %>
+<div class="btn-group callback">
+<%= link_to "New Debt", new_debt_path, id: "new_link", class: "btn btn-success" %>
+  <ul class="dropdown-menu dropdown-menu-right expenses">
+
+  </ul>
+</div>
+<div class="content">
+	<% @debts.each do |debt| %>
+	<div class="row wide report">
+		<div class="heading"></div>			
+	<div class="report-outer">
+	<div class="report-center">
+			<div class="approximate upper">
+				<span class="summary-name"><%= debt.name? ? debt.name : "Debt" %> (Summary)</span><span class="more"><%= link_to "Show Detailed Report", show_debt_path(debt) %></span>
+			</div>
+				<div class="approximate lower">
+				<div class="title">Monthly Interest Rate: <span class="value"><%= number_with_precision(debt.monthly_interest, :precision => 2) %>%</span></div>
+				<div class="title">Total Payment (Maximum): <span class="value">$<%= number_with_delimiter(number_with_precision(debt.payment.abs, :precision => 2)) %></span></div>
+				<div class="title">Payment Length (Budgeted): <span class="value"><%= number_with_precision(debt.budgeted_duration.abs, :precision => 2, significant: true) %>/MO</span></div>
+				</div>
+			
+	</div>
+	</div>	
+	</div>
+<% end %>
+	
+	
+</div>

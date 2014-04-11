@@ -1,0 +1,21 @@
+<% provide(:title, 'Plentus - Tax Calculator') %>
+<% content_for :feature do %>
+<li><%= link_to "Tax Calculator", show_tax_path(current_user.tax) %></li><li>Update</li>
+<% end %>
+<div class="content">
+<%= simple_form_for @tax, :html => {:class => "feature-form tax center-block"} do |f| %>
+<form role="form">
+  <div class="form-group">
+<%= f.input :flexible_income, label: 'Annual Income:', placeholder: 'Ex: $60,000' %>
+</div>
+<div class="form-group">
+<%= f.input :flexible_taxes, label: 'Taxes Already Paid or Deducted:', placeholder: 'Ex: $2,500' %>
+</div>
+<div class="form-group">
+<%= f.input :flexible_rrsp, label: 'RRSP Contributions:', placeholder: 'Ex: $1000' %>
+</div>
+<%= f.submit "Save Updated Taxes", :class => "btn btn-success"%>
+				<% end %>
+
+</form>
+</div>

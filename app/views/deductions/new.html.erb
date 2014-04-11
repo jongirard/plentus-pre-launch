@@ -1,0 +1,95 @@
+<% provide(:title, 'Plentus - Deduction Details') %>
+<% content_for :feature do %>
+<% provide(:class, 'deduction edit') %>
+<li><%= link_to "Tax Deduction Details", show_deduction_path(current_user.deduction) %></li><li>New Tax Deduction</li>
+<% end %>
+<div class="content">
+<%= simple_form_for @deduction, :html => {:class => "feature-form deduction center-block"} do |f| %>
+				<form role="form">
+					<div class="form-accordian panel-group" id="accordion">
+				<div class="approximate panel panel-default collapseOne">	
+				<span class="heading">Home/Office Deductible Amount:</span><a class="add" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Add</a>
+				<div id="collapseOne" class="panel-collapse collapse in">
+				      <div class="panel-body">
+				<div class="form-group">
+				<%= f.input :flexible_home_sqf, label: 'Total Square Footage of your Home:', placeholder: 'Ex: 1,500' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_business_sqf, label: 'Total Square Footage used for Business Purposes (ex: Living Room, Office):', placeholder: 'Ex: 400' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_monthly_expenses, label: 'Monthly Expenses (Rent/Mortgage Interest, Property Taxes, Utilities)', placeholder: 'Ex: $850' %>
+				</div>
+				
+				</div>
+				</div>
+				</div>
+				
+				<div class="approximate panel panel-default">
+				<span class="heading">Motor Vehicle Deductible Amount:</span><a class="add" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Add</a>
+				<div id="collapseTwo" class="panel-collapse collapse">
+				      <div class="panel-body">
+				<div class="form-group">
+				<%= f.input :flexible_business_kilometers, label: 'Total Number of Kilometres you drive for Business Purposes:', placeholder: 'Ex: 600' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_start_kilometers, label: 'Total Number of Kilometres you drive, from the start of the year:', placeholder: 'Ex: 8,000' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_vehicle_expenses, label: 'Total Amount of Vehicle Expenses:', placeholder: 'Ex: $900' %>
+				</div>
+				
+				</div>
+				</div>
+				</div>
+				
+				<div class="approximate panel panel-default">
+				<span class="heading">Short Travel Deductible Amount:</span><a class="add" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Add</a>
+				<div id="collapseThree" class="panel-collapse collapse">
+				      <div class="panel-body">
+				If duration of trip is 7 days or less (including travel days)
+				<div class="form-group">
+				<%= f.input :flexible_short_flight, label: 'Total Flight Cost:', placeholder: 'Ex: $800' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_short_meal, label: 'Total Meal Costs:', placeholder: 'Ex: $300' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_short_entertainment, label: 'Total Entertainment Costs:', placeholder: 'Ex: $150' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_short_lodging, label: 'Total Lodging Costs:', placeholder: 'Ex: $500' %>
+				</div>
+				
+				</div>
+				</div>
+				</div>
+				
+					<div class="approximate panel panel-default">
+					<span class="heading">Long Travel Deductible Amount:</span><a class="add" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Add</a>
+					<div id="collapseFour" class="panel-collapse collapse">
+					      <div class="panel-body">
+				If duration of trip is 7 days or more (including travel days)
+				<div class="form-group">
+				<%= f.input :flexible_long_flight, label: 'Total Flight Cost:', placeholder: 'Ex: $800' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_long_meal, label: 'Total Meal Costs:', placeholder: 'Ex: $600' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_long_entertainment, label: 'Total Entertainment Costs:', placeholder: 'Ex: $300' %>
+				</div>
+				<div class="form-group">
+				<%= f.input :flexible_long_lodging, label: 'Total Lodging Costs:', placeholder: 'Ex: $1200' %>
+				</div>
+				
+				</div>
+				</div>
+				</div>
+				
+				<%= f.submit "Save Updated Deduction", :class => "btn btn-success"%>
+				<% end %>
+
+</form>
+</div>
+</div>

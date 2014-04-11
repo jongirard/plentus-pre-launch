@@ -1,0 +1,63 @@
+<% provide(:title, 'Plentus - Debt Manager') %>
+<% content_for :feature do %>
+<li><%= link_to "Debt Manager", index_debt_path %></li><li><%= @debt.name? ? @debt.name : "Detailed Report" %></li>
+<% end %>
+<div class="btn-group callback">
+<%= link_to "New Debt", new_debt_path, id: "new_link", class: "btn btn-success" %>
+  <ul class="dropdown-menu dropdown-menu-right expenses">
+
+  </ul>
+</div>
+
+		<div class="content debt">
+
+			
+<div class="row dual report">
+	<div class="col-xs-6">
+	<div class="heading"><%= @debt.name %> Report:</div>			
+<div class="report-outer">
+<div class="report-center dual">
+			<div class="approximate upper">
+			Annual Interest Rate: <span class="value"><%= number_with_precision(@debt.interest_annual, :precision => 2) %>%</span>
+			</div>
+			<div class="approximate lower green bottom">
+			Monthly Interest Rate: <span class="value"><%= number_with_precision(@debt.monthly_interest, :precision => 2) %>%</span>
+			</div>
+			<div class="approximate">
+			Number of months you want to pay debt off in: <span class="value"><%= @debt.duration %>/MO</span>
+			</div>
+			<div class="approximate">
+			Present Balance: <span class="value">$<%= number_with_delimiter(@debt.present_balance.floor) %></span>
+			</div>
+			<div class="approximate upper">
+			Future Value: <span class="value">$<%= number_with_delimiter(@debt.future_value.floor) %></span>
+			</div>
+			<div class="approximate lower green">
+			Total Monthly Payment: <span class="value">$<%= number_with_delimiter(number_with_precision(@debt.payment.abs, :precision => 2)) %></span>
+            </div>
+</div>
+</div>	
+	</div>
+			<div class="col-xs-6">
+			<div class="heading">Budgeted:</div>			
+			<div class="report-outer">
+			<div class="report-center dual">	
+			<div class="approximate upper">
+			Budgeted Monthly Payment: <span class="value">$<%= number_with_delimiter(@debt.budget_monthly.floor) %></span>
+			</div>
+			<div class="approximate lower green">
+			Number of months it will take to pay debt off:<span class="value"><%= number_with_precision(@debt.budgeted_duration.abs, :precision => 2, significant: true) %>/MO</span>	
+			</div>
+			</div>
+			</div>
+			</div>
+			
+        </div>
+<div class="row dual report lower">
+			<div class="lower-well-outer">
+				<div class="lower-well">
+					<div class="panel-button small"><div class="outer-shadow"><%= link_to "Update", edit_debt_path(@debt), class: "btn btn-solid btn-lg features" %></div></div><div class="panel-button small"><div class="outer-shadow delete"><%= link_to 'Delete', @debt, method: :delete, data: { confirm: 'Delete this debt?' }, class: "btn btn-solid btn-lg features" %></div></div>
+				</div>
+				</div>
+			</div>
+</div>

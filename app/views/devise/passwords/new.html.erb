@@ -1,0 +1,32 @@
+<% provide(:title, 'Plentus - Password Reset') %>
+<main class="bs-secondaryhead" role="main">
+	<div class="container secondary">
+	<div class="row">
+	<div class="col-xs-12">
+		<%= link_to "<div class=\"logo logo-inset\"></div>".html_safe, root_path, class: "logo logo-inset" %>
+		<div class="outer-box-transparent">
+			<div class="inner-box">
+				<div class="note">Reset your Password</div>
+				<div class="note-sub">Enter your email below and we'll send you instructions to reset your password.</div>
+
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :email, :required => true, :label => false, placeholder: 'Email', :autofocus => true %>
+  </div>
+
+  
+    <%= f.button :submit, "Submit", :class => "btn btn-solid btn-lg" %>
+
+<% end %>
+</div>
+</div>
+<div class="forgot-password-signup-container">
+<span class="link"><%= link_to "Cancel", :back, class: "forgot" %></span> or <span class="link"><%= link_to "Sign Up for a plan", page_path('plans'), class: "forgot" %></span>
+</div>
+
+</div>
+</div>
+</div>
+</main>

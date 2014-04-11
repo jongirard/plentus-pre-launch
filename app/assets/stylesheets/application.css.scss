@@ -9,9 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap_and_overrides
+ *= require font-awesome
  */
- @font-face {font-family: 'proxima_nova_rgregular';
+@import "bootstrap";
+@font-face {font-family: 'proxima_nova_rgregular';
 src: font-url("proximanovareg-webfont.eot"); src: font-url("proximanovareg-webfont.eot?#iefix") format('embedded-opentype'), font-url("proximanovareg-webfont.woff") format('woff'), font-url("proximanovareg-webfont.ttf") format('truetype');}
 
 html {
@@ -21,15 +23,18 @@ height: 100%;
 main.bs-masthead {
 
 }
+.alert.alert-danger a {
+	color: rgb(85, 12, 12);
+}
 
 .app-promo {
--moz-box-shadow:    0px 6px 35px 0px rgba(0,0,0,0.08);
--webkit-box-shadow: 0px 6px 35px 0px rgba(0,0,0,0.08);
-box-shadow:         0px 6px 35px 0px rgba(0,0,0,0.08);
+-moz-box-shadow:    0px 6px 35px 0px rgba(0,0,0,0.15);
+-webkit-box-shadow: 0px 6px 35px 0px rgba(0,0,0,0.15);
+box-shadow:         0px 6px 35px 0px rgba(0,0,0,0.15);
 background-image: asset-url("app-promo.png");
 background-size: 100% 100%;
-width: 1019px;
-height: 430px;
+width: 1130px;
+height: 500px;
 margin-left: auto;
 margin-right: auto;
 position: relative;
@@ -40,13 +45,15 @@ main.bs-sections.tour .top {
 background: none;
 }
 .top-navigation {
-background-color: #B0BBCC;
+background-color: rgba(250, 251, 255, 0.9);
 height: 68px;
-min-width: 1200px;
--moz-box-shadow: 0px -13px 20px 5px rgba(0, 0, 0, 0.25);
--webkit-box-shadow: 0px -13px 20px 5px rgba(0, 0, 0, 0.25);
-box-shadow: 0px -13px 20px 5px rgba(0, 0, 0, 0.25);
+min-width: 1225px;
 z-index: 5000;
+position: absolute;
+width: 100%;
+}
+.top-navigation.pricing {
+background-color: #F9FAFF;
 }
 .logo {
 float: left;
@@ -58,14 +65,36 @@ background-size: 144px 39px;
 .logo-inset {
 float: none;
 background-size: 100% 100%;
-width: 174px;
-height: 47px;
-background-image: asset-url("plentuslogoinset.png");
+width: 62px;
+height: 65px;
+background-image: asset-url("plentusiconbg.png");
 background-repeat: no-repeat;
 }
 .footer {
-background-color: #ECEDF7;
+background-color: #3F414E;
 padding-top: 15px;
 min-width: 1200px;
 width: 100%;
+}
+/* retina displays */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) { 
+.app-promo {
+	background-image: asset-url("app-promo@2x.png");
+	background-size: 1130px 500px;
+}
+.logo-inset {
+background-size: 62px 65px;
+background-image: asset-url("plentusiconbg@2x.png");
+}
+main.bs-secondaryhead {
+background-size: 485px 485px;
+background-image: asset-url("bg_texture@2x.png");
+background-repeat: repeat;
+}
 }

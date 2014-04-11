@@ -1,0 +1,34 @@
+<% provide(:title, 'Plentus - Resend Confirmation') %>
+<main class="bs-secondaryhead" role="main">
+	<div class="container secondary">
+	<div class="row">
+	<div class="col-xs-12">
+		<%= link_to "<div class=\"logo logo-inset\"></div>".html_safe, root_path, class: "logo logo-inset" %>
+		<div class="outer-box-transparent">
+			<div class="inner-box">
+				<div class="note">Resend Confirmation</div>
+				<div class="note-sub">Enter your email below and we'll resend a confirmation link. </div>
+<%= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= f.error_notification %>
+  
+
+  <div class="form-group">
+    <%= f.input :email, :required => true, :label => false, placeholder: 'Email', :autofocus => true %>
+  </div>
+
+
+    <%= f.button :submit, "Resend confirmation link", :class => "btn btn-solid btn-lg" %>
+
+</div>
+
+</div>
+<div class="outside-container"><%= f.full_error :confirmation_token %> </div>
+<div class="forgot-password-signup-container">
+<span class="link"><%= link_to "Cancel", :back, class: "forgot" %></span> or <span class="link"><%= link_to "Sign Up for a plan", page_path('plans'), class: "forgot" %></span>
+</div>
+<% end %>
+</div>
+</div>
+</div>
+</main>
+

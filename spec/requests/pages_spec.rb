@@ -1,13 +1,14 @@
 require 'spec_helper'
 
-describe "Pages" do
+describe "Marketing Pages" do
   
    it "does have navigation" do
       visit '/home'
-      expect(page).to have_link('Features')
+      expect(page).to have_link('Tour')
       expect(page).to have_link('Pricing')
       expect(page).to have_link('Blog')
       expect(page).to have_link('Sign Up')
+      expect(page).to have_link('Login')
     end
     
   describe "Home page" do
@@ -22,9 +23,9 @@ describe "Pages" do
       expect(page).to have_content('Manage your pursuit of')
     end
     
-    it "does have the link 'SIGN UP'" do
+    it "does have the link 'TRY FOR FREE'" do
       visit '/home'
-      expect(page).to have_link('SIGN UP')
+      expect(page).to have_link('TRY FOR FREE')
     end
   end
   
@@ -48,17 +49,17 @@ end
 describe "Pricing Page" do
 
 it "does have the correct page title" do
-visit '/pricing'
+visit '/plans'
 expect(page).to have_title("Plentus - Pricing")
 end
 
 it "does have correct plans, core and plus" do
-  visit '/pricing'
+  visit '/plans'
   expect(page).to have_selector('p.identifier', text: 'CORE')
   expect(page).to have_selector('p.identifier', text: 'PLUS')
 end
 it "does have plan select link(s)" do
-  visit '/pricing'
+  visit '/plans'
   expect(page).to have_link('GET STARTED TODAY')
 end
 end

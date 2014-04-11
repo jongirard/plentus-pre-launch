@@ -20,4 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            fullname: 
+              blank: "Required Field"
+              invalid: "Invalid Characters"
+            email:
+              blank: "Required Field"
+              taken: "Email Address already signed up"
+              invalid: "Email Address is invalid"
+            password:
+              blank: "Required Field"
+              too_short: "Too Short. 6 Characters Mimimum"
+              too_long: "Too Long. 30 Characters Maximum"
+            password_confirmation:
+              blank: "Required Field"
+              confirmation: "Password does not match"

@@ -1,0 +1,33 @@
+<div style="padding:0;margin:0 auto;background: #f4f7fb;color:#555555;font-size:13px;font-weight:400;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">
+      <table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" valign="top" bgcolor="#FFFFFF">
+             <table cellspacing="0" cellpadding="0"><tbody><tr><td width="20"></td>
+                  <td width="542" align="left">
+                    <table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td height="23"></td></tr><tr><td align="center">
+                          <div style="color:#c1c2c5;font-weight:500;font-size:25px;">
+                            <%= image_tag("plentuslogo.png", width: '144', height: '39', alt: "Plentus", style: "border:0;border-width:0;") %></div>
+                        </td>
+                      </tr><tr><td height="23"></td></tr></tbody></table><div class="content" style="border:1px solid #d3d8df;background:#fff;font-size:14px;line-height:1.75em;">
+                      <div style="margin:23px 30px;margin-bottom:27px;">
+                          
+  <table cellspacing="0" cellpadding="0" border="0" width="420" style="width:420px;margin:0 auto;"><tbody><tr><td height="20"></td>
+    </tr><tr><td>
+        <p style="color:#444444;font-size:14px;margin:0;padding:0;margin-bottom:12px;line-height:1.5em;">Hi <%= @email %>,</p>
+<p style="color:#444444;font-size:14px;margin:0;padding:0;margin-bottom:12px;line-height:1.5em;">You're just one step away from activating your Plentus account. Confirm your email address by clicking the link below to begin using your account immediately.</p>
+
+<p style="font-size:14px;margin:0;padding:0;margin-bottom:10px;line-height:1.4em;"><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @token) %></p>
+
+<p style="color:#444444;font-size:14px;margin:0;padding:0;margin-bottom:12px;line-height:1.5em;"><em>Sincerely,</em></p>
+<p style="color:#444444;font-size:14px;margin:0;padding:0;margin-bottom:12px;line-height:1.5em;"><em>The Plentus Team</em></p>
+
+      </td>
+    </tr><tr><td height="20"></td>
+    </tr></tbody></table></div>
+                    </div>
+                    <table width="100%"><tbody><tr><td height="10"></td></tr><tr><td align="center">
+                          <div style="color:#bbbbbb;font-size:13px;font-weight:200;"><strong style="font-weight:500;">Questions?</strong> Reply to this email to contact our support team.</div>
+                        </td>
+                      </tr></td>
+                      </tr></tbody></table></td>
+                <td width="20"></td>
+              </tr></tbody></table></td>
+        </tr></tbody></table></div>

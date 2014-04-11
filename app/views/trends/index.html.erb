@@ -1,0 +1,36 @@
+<%= include_gon %>
+<% provide(:title, 'Plentus - Year Trend') %>
+<% provide(:class, 'trends') %>
+<% content_for :feature do %>
+<li>Year Trend</li>
+<% end %>
+
+<div class="content expenses">
+
+<div class="row dual report">
+<div class="col-xs-6">
+<div class="heading"></div>			
+<div class="report-outer">
+
+	
+	<div id="expense-chart"></div>
+			
+
+
+</div>	
+</div>
+			<div class="col-xs-6">
+			<div class="heading">Monthly Expenses:</div>			
+			<div class="report-outer">
+			<div class="report-center dual">
+				<% @expenses_by_month.sort.each do |month, expenses| %>	
+			<div class="approximate">
+			<%= month.strftime('%B') %> <span class="value"><%= link_to "View Report", month_trends_path(:year => month.year, :month => month.month.to_s.rjust(2,"0")) %></span>
+			</div>
+			<% end %>
+			</div>
+			</div>
+			</div>
+
+</div>
+</div>

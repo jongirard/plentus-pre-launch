@@ -1,0 +1,26 @@
+<%= simple_form_for @expense, remote: true do |f| %>
+				<form role="form">
+					<div class="form-group">
+					<%= f.input :name, :label => false, placeholder: 'Expense Name ("Rent")' %>
+					</div>
+				  <div class="form-group">
+				<%= f.input :flexible_amount, :label => false, placeholder: 'Expense Amount ("$600")' %>
+				</div>
+				<div class="row top">
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "Utilities") %>
+				<%= label_tag(:expense_type_utlities, "Utilities") %></span>
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "Rent") %>
+				<%= label_tag(:expense_type_rent, "Rent") %></span>
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "Groceries") %>
+				<%= label_tag(:expense_type_groceries, "Groceries") %></span>
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "Vehicle") %>
+				<%= label_tag(:expense_type_vehicles, "Vehicle") %></span>
+				</div>
+				<div class="row bottom">
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "Entertainment") %>
+				<%= label_tag(:expense_type_entertainment, "Entertainment") %></span>
+				<span class="radio-holder"><%= f.radio_button(:expense_type, "Other", { checked: true }) %>
+				<%= label_tag(:expense_type_other, "Other") %></span>
+				</div>
+				<%= f.submit "Add Expense", :class => "btn btn-block btn-success"%>
+				<% end %>

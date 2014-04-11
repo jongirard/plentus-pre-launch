@@ -1,0 +1,30 @@
+<% provide(:title, 'Plentus - Account Login') %>
+<main class="bs-secondaryhead" role="main">
+	<div class="container secondary">
+	<div class="row">
+	<div class="col-xs-12">
+			<%= link_to "<div class=\"logo logo-inset\"></div>".html_safe, root_path, class: "logo logo-inset" %>
+		<div class="outer-box-transparent">
+			
+				<div class="note">Log in to Plentus</div>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  	<form role="form">
+	<div class="form-group">
+	<%= f.input :email, :label => false, placeholder: 'Email' %>
+	</div>
+	<div class="form-group">
+	<%= f.input :password, :label => false, placeholder: 'Password' %>
+	</div>
+	<%= f.submit "Login!", :class => "btn btn-solid btn-lg"%>
+	</form>
+<% end %>
+</div>
+<div class="forgot-password-signup-container">
+<span class="link"><%= link_to "Forgot your password", forgot_password_path, class: "forgot" %></span> or need to <span class="link"><%= link_to "Sign Up for a plan", page_path('plans'), class: "forgot" %></span>
+</div>
+
+</div>
+</div>
+</div>
+</main>
