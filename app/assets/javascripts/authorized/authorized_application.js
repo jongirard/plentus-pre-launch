@@ -20,4 +20,5 @@
 //= require bootstrap/transition
 //= require bootstrap/collapse
 //= require highcharts
+//= require segmentio
 //= require_tree .

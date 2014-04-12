@@ -2,5 +2,4 @@ var analytics=analytics||[];(function(){var e=["identify","track","trackLink","t
 analytics.load("wghbgrlm4f");
 $(document).on('page:load', function() {
   analytics.pageview();
-  analytics.trackForm($('#new_user'), 'Signed Up');
 })

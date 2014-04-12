@@ -19,3 +19,4 @@
 //= require bootstrap/dropdown
 //= require animations
 //= require region_select
+//= require segmentio
