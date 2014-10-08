@@ -8,7 +8,7 @@ set :rvm_ruby_string, :local
 before 'deploy:setup', 'rvm:install_rvm'  # install/update RVM
 before 'deploy:setup', 'rvm:install_ruby'
 
-server "appnode1.goplentus.com", :web, :app, :db, primary: true
+server "192.241.217.183", :web, :app, :db, primary: true
 
 set :application, "plentus-pre-launch"
 set :user, "deploy"
